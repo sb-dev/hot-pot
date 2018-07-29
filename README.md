@@ -6,12 +6,18 @@ Takeaways freshly delivered from the neighbourhood.
 
 - Node.js and the NPM package manager
 - PostgreSQL
+- Bower
 - Grunt
 - Sails
 
 ## Installing
 
 ### Node.js
+Install Bower dependencies:
+```
+bower install
+```
+
 Install NPM dependencies:
 ```
 npm install
@@ -72,3 +78,9 @@ sails lift
 - An order appears after a few seconds; the route is displayed on the map.
 - Click on "Swipe to accept delivery" to accept order and view route.
 - Confirm pick up to complete order.
+
+## TODO
+- Migrate Bower dependencies to NPM
+- Migrate AngularJS to Angular 5 and cleanup Angular integration with SailsJS
+- Add unit tests
+- Automate deployment to AWS
