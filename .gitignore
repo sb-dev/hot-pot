@@ -69,7 +69,7 @@ config/passport.js
 
 node_modules
 assets/bower_components/
-
+package-lock.json
 
 
 
