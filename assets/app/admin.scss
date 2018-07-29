@@ -1,0 +1,101 @@
+.caterer {
+  height: 100%;
+  h1 {
+    color: rgba(0,0,0,0.87) !important;
+  }
+  .ui.secondary.menu {
+    background: white;
+    border-bottom: none !important;
+    width: 100%;
+    .item {
+      padding: .5em .4em !important;
+    }
+  }
+
+  .ui.secondary.pointing.menu.head h1.header.item {
+    //color: rgb(114, 116, 119) !important;
+    color: $dark-primary-color !important;
+    font-size: 1.6em;
+
+    i {
+      color: $dark-primary-color  !important;
+    }
+    span {
+      font-size: 1em !important;
+      font-family: lato;
+    }
+    .subtitle{
+      color: $primary-color !important;
+    }
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    z-index: 10;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px;
+    i {
+      color: rgba(0,0,0,0.54);
+
+      path {
+        fill: rgba(0,0,0,0.54);
+      }
+    }
+    .menu.head {
+      margin-bottom: 0 !important;
+      h1 {
+        i {
+          width: 32px;
+        }
+        span{
+          font-weight: normal;
+        }
+      }
+    }
+    .inner-sidebar {
+      height: calc(100% - 56px);
+      padding-top: 16px;
+      .ui.secondary.menu.vertical {
+        padding-left: 16px;
+        .icon-link{
+          i {
+            margin-right: 16px;
+          }
+          span {
+            top: -.2em;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .dashboard-content {
+    position: absolute;
+    left: 320px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    .step-form {
+      padding-top: 0 !important;
+    }
+    .ui.secondary.menu {
+      i {
+        path {
+          fill: white;
+        }
+      }
+      background: $dark-primary-color;
+      box-shadow: rgba(0, 0, 0, 0.137255) 0px 4px 5px 0px, rgba(0, 0, 0, 0.117647) 0px 1px 10px 0px, rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
+    }
+    .content-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "session": false,
+    "gulp": false
+  },
+  "generators": {
+    "modules": {}
+  }
+}

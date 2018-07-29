@@ -1,0 +1,170 @@
+<div class="ui container edit-search-form" ng-show="showEditSearchForm">
+  <form class="ui form inline-form" name="searchForm" ng-submit="updateSearch(currentSearch)">
+    <div class="fields">
+      <div class="two wide field">
+        <label>Post code</label>
+        <input type="text" name="postcode" ng-model="currentSearch.postcode" placeholder="E.G. SW1A 1AA">
+      </div>
+      <div class="two wide field">
+        <label>Day</label>
+        <select class="ui fluid dropdown">
+          <option ng-repeat="day in currentSearch.searchParams.availableDays" value="{{day}}">{{day | ucfirst}}</option>
+        </select>
+      </div>
+      <div class="two wide field">
+        <label>Time</label>
+        <select class="ui fluid dropdown">
+          <option ng-repeat="time in currentSearch.searchParams.availableTimes" value="{{day}}">{{time | ucfirst}}</option>
+        </select>
+      </div>
+      <div class="two wide field">
+        <label>Service</label>
+        <select class="ui fluid dropdown">
+          <option ng-repeat="service in currentSearch.searchParams.availableServices" value="{{day}}">{{service | ucfirst}}</option>
+        </select>
+      </div>
+      <button ng-class="{'loading':formLoading}" class="ui basic button" tabindex="0">Update</button>
+      <div class="six wide field">
+        &nbsp;
+      </div>
+      <div class="two wide field">
+        <label>Sort by</label>
+        <select class="ui fluid dropdown" ng-model="sortBy">
+          <option value="distanceGroup" >Distance</option>
+          <option value="estimatedDeliveryTime">Delivery time</option>
+          <option value="cuisine">Cuisine</option>
+          <option value="priceGroup">Price</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="ui container stackable grid">
+  <div class="four wide column food-tags-sidebar hidden-small">
+    <div class="ui styled accordion">
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Cuisine
+      </div>
+      <div class="content">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item" ng-click="cuisineFilter = 'all'" ng-class="{'active': 'all' == cuisineFilter}">
+            All
+          </a>
+          <a ng-repeat="meal in currentSearch.availableDishes | unique: 'cuisine' | orderBy: 'cuisine' " ng-if="meal.cuisine.length > 0" ng-click="setCuisineFilter(meal.cuisine)" class="item" ng-class="{'active': meal.cuisine == cuisineFilter}">
+            {{meal.cuisine | ucfirst}}
+          </a>
+        </div>
+      </div>
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Dish
+      </div>
+      <div class="content">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item" ng-click="dishTypeFilter = 'all'" ng-class="{'active': 'all' == dishTypeFilter}">
+            All
+          </a>
+          <a ng-repeat="meal in currentSearch.availableDishes | orderBy: 'dishType' | unique: 'dishType'" ng-if="meal.dishType.length > 0" ng-click="setDishTypeFilter(meal.dishType)" class="item" ng-class="{'active': meal.dishType == dishTypeFilter}">
+            {{meal.dishType | ucfirst}}
+          </a>
+        </div>
+      </div>
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Meal
+      </div>
+      <div class="content">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item" ng-click="mealFilter = 'all'" ng-class="{'active': 'all' == mealFilter}">
+            All
+          </a>
+          <a ng-repeat="dish in currentSearch.availableDishes | orderBy: 'meal' | unique: 'meal'" ng-if="dish.meal.length > 0" ng-click="setMealFilter(dish.meal)" class="item" ng-class="{'active': dish.meal == mealFilter}">
+            {{dish.meal | ucfirst}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="ui items twelve wide column">
+    <div class="ui item meal clickable" ui-sref="menu" ng-repeat="dish in meals | orderBy:orderBy">
+      <div class="ui small image">
+        <img src="/images/{{ dish.picture }}">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          {{ dish.title }}
+        </div>
+        <div class="meta">
+          <div class="price">
+            <span ng-class="{'selected': orderBy == 'distance'}">{{ dish.distance }}KM</span>
+            |
+            <span ng-class="{'selected': orderBy == 'estimatedDeliveryTime'}">{{ dish.estimatedDeliveryTime }}MINS</span>
+            |
+            <span ng-class="{'selected': orderBy == 'price'}">{{ dish.price|currency:"£" }}</span>
+            |
+            <span ng-class="{'selected': orderBy == 'cuisine'}">{{ dish.cuisine }}</span>
+          </div>
+        </div>
+        <div class="description">
+          <p>{{ dish.description }}</p>
+          <input-stars max="5" readonly="true" ng-model="dish.rating"></input-stars>({{ dish.numberOfRatings }})
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="twelve wide column meals">
+    <div class="ui message" ng-if="currentSearch.availableDishes.length == 0">
+      <div class="header">
+        Sorry, we don't currently service {{currentSearch.postcode | uppercase}}
+      </div>
+      <p>There are no dishes cooking in your area just yet. In the meantime, get to know some of our lovely cooks by clicking below.</p>
+      <div class="ui button">
+        Meet our cooks
+      </div>
+    </div>
+    <div class="ui items" ng-repeat="(key, value) in currentSearch.availableDishes | where:filter | orderBy:sortBy | groupBy: sortBy">
+      <h1 class="ui header" ng-switch="key">
+        <span ng-switch-when="null">Other</span>
+        <span ng-switch-default>{{key | ucfirst}}</span>
+      </h1>
+      <div class="ui item meal clickable" ng-repeat="dish in value" ng-click="proceedToMenu(dish)">
+        <div class="ui small image">
+          <img src="{{ dish.picture }}">
+        </div>
+        <div class="middle aligned content">
+          <div class="header">
+            {{ dish.name | ucfirst}}
+            <br />
+            <span style="text-transform: capitalize; font-weight: normal; font-size: 0.8em">{{ dish.catererName }}</span>
+          </div>
+          <div class="meta">
+            <div class="price">
+              <span ng-class="{'selected': sortBy == 'distance'}">{{ (dish.distance).toFixed(2) }}KM</span>
+              |
+              <span ng-class="{'selected': sortBy == 'estimatedDeliveryTime'}">{{ dish.preparationTime }}MINS</span>
+              |
+              <span ng-class="{'selected': sortBy == 'price'}">{{ dish.price|currency:"£" }}</span>
+              |
+              <span ng-class="{'selected': sortBy == 'cuisine'}">{{ dish.cuisine | ucfirst}}</span>
+            </div>
+          </div>
+          <div class="description">
+            <p>{{ dish.description }}</p>
+            <input-stars max="5" readonly="true" ng-model="dish.rating"></input-stars>({{ dish.numberOfRatings }})
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.ui.accordion')
+    .accordion()
+  ;
+});
+</script>

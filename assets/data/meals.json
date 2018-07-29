@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Christmas Breakfast",
+    "description": "Wake up to a delicious breakfast over the Christmas break.",
+    "picture": "ChristmasBreakfast.jpg",
+    "rating": 4,
+    "numberOfRatings": 30,
+    "price": 1.90,
+    "cuisine": "chinese",
+    "estimatedDeliveryTime": "30",
+    "distance": "1,4",
+    "distanceGroup": "1-2KM",
+    "priceGroup": "£0-2.50",
+    "diet": "vegetarian",
+    "meal": "lunch"
+  },
+  {
+    "title": "Christmas Breakfast",
+    "description": "Wake up to a delicious breakfast over the Christmas break.",
+    "picture": "ChristmasBreakfast.jpg",
+    "rating": 4,
+    "numberOfRatings": 30,
+    "price": 5.90,
+    "cuisine": "french",
+    "estimatedDeliveryTime": "10",
+    "distance": "0,7",
+    "distanceGroup": "0-1KM",
+    "priceGroup": "£0-2.50",
+    "diet": "",
+    "meal": "dinner"
+  },
+  {
+    "title": "Christmas Breakfast",
+    "description": "Wake up to a delicious breakfast over the Christmas break.",
+    "picture": "ChristmasBreakfast.jpg",
+    "rating": 4,
+    "numberOfRatings": 30,
+    "price": 2.90,
+    "cuisine": "chinese",
+    "estimatedDeliveryTime": "60",
+    "distance": "0,2",
+    "distanceGroup": "0-5KM",
+    "priceGroup": "£2.50-5.00",
+    "diet": "",
+    "meal": "breakfast"
+  }
+]

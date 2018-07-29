@@ -1,0 +1,11 @@
+<div class="ui vertical menu order-list">
+  <a class="item" ng-repeat="order in currentCaterer.orders | orderBy:'-createdAt'" ui-sref="catererApp.viewOrderItem({orderUid: order.uid})">
+    <div class="content">
+      <h3 class="header"><i class="fa fa-user"></i>&nbsp;{{order.user.firstName}} {{order.user.lastName}}</h3>
+      <div class="description" ng-switch="order.status">
+        <p ng-switch-when="order-pending">Pending...</p>
+        <p ng-switch-when="order-accepted"><i class="fa fa-check-circle"></i> Acceted</p>
+      </div>
+    </div>
+  </a>
+</div>

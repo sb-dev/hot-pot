@@ -1,0 +1,111 @@
+<div class="ui inverted vertical search center aligned segment">
+  <div class="ui container head">
+    <div class="ui large secondary inverted pointing menu">
+      <a class="item header site-name">Hot Pot</a>
+      <div class="right item">
+        <a class="item">
+          <i class="fa fa-shopping-basket"></i> £6.00
+        </a>
+        <div class="ui dropdown item">
+          <i class="fa fa-user"></i> Samir Banzenine <i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">Order history</a>
+            <a class="item">Account</a>
+            <a class="item">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui text container head">
+    <div class="menu-cover"></div>
+    <p>You ordered from</p>
+    <h1 class="ui inverted header">Samir's Kitchen</h1>
+  </div>
+</div>
+
+<div class="ui container grid">
+  <div class="ui twelve wide column step-form">
+    <h1 class="ui dividing header">Thank you for ordering</h1>
+    <p>We will send a confirmation email to samir.benzenine@wanadoo.fr once the caterer accepts your order</p>
+    <div class="ui ordered steps">
+        <div class="completed step">
+          <div class="content">
+            <div class="title">Accepted</div>
+            <div class="description">Your order has been accepted</div>
+          </div>
+        </div>
+        <div class="completed step">
+          <div class="content">
+            <div class="title">On it's way</div>
+            <div class="description">Your order is on it's way</div>
+          </div>
+        </div>
+        <div class="active step">
+          <div class="content">
+            <div class="title">Delivery</div>
+            <div class="description">Your order has been delivered</div>
+          </div>
+        </div>
+      </div>
+    <ng-map center="current-location" zoom="15" tilt="45"
+        disable-default-u-i="true">
+          <marker
+          position="current"
+          centered="true"
+          icon="{
+            url:'/images/position.png'
+          }">
+          </marker>
+    </ng-map>
+  </div>
+  <div class="four wide column your-order">
+    <h1>Your order</h1>
+    <div class="estimated-delivery-time-container">
+      <div class="estimated-delivery-time">
+        <div class="header">estimated time</div>
+        <div class="time">30</div>
+        <div class="unit">minutes</div>
+      </div>
+    </div>
+    <div class="ui middle aligned divided list">
+      <div class="item">
+        <div class="right floated content">
+          <div class="header">£3.00</div>
+        </div>
+        <div class="content">
+          <p>1x Content C</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="right floated content">
+          <div class="header">£3.00</div>
+        </div>
+        <div class="content">
+          <p>1x Content C</p>
+        </div>
+      </div>
+    </div>
+    <div class="ui middle aligned divided list bill">
+      <div class="item">
+        <div class="right floated content">
+          <div class="header price">£6.00</div>
+        </div>
+        <div class="content total-label">
+          Total paid
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <h2 class="header">Order placed</h2>
+          <div class="description">
+            <h3>For delivery</h3>
+            samir <br />
+            flat 3, 33 fernwood avenue, London <br />
+            SW16 1RD
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

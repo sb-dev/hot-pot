@@ -1,0 +1,145 @@
+<div class="ui middle aligned center aligned grid content-inner-container" ng-show="!online">
+  <div class="six wide column">
+    <h2 class="ui teal image header">
+      <div class="content">
+        Go online
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="menu">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select a meals</div>
+            <div class="menu">
+              <div class="item" data-value="sunday brunch">Sunday Brunch</div>
+              <div class="item" data-value="sunday brunch">Weekday Lunch</div>
+              <div class="item" data-value="sunday brunch">Weekend Dinner</div>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui fluid search selection dropdown">
+            <input type="hidden" name="menu">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select a device</div>
+            <div class="menu">
+              <div class="item" data-value="sunday brunch">iPad mini</div>
+              <div class="item" data-value="sunday brunch">iPhone</div>
+            </div>
+          </div>
+        </div>
+        <div class="ui fluid large teal submit button" ng-click="goOnline()">GO ONLINE</div>
+      </div>
+      <div class="ui error message"></div>
+    </form>
+  </div>
+</div>
+<div class="ui middle aligned center aligned grid" ng-show="online">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <div class="content">
+        Status: Online
+      </div>
+    </h2>
+  </div>
+</div>
+<div class="ui container grid" ng-show="online">
+  <div class="ui six wide column ">
+    <div class="ui vertical menu order-list">
+      <a class="item">
+        <div class="content">
+          <h3 class="header"><i class="fa fa-user"></i>&nbsp;Stevie Feliciano</h3>
+          <div class="description">
+            <p>Pending...</p>
+          </div>
+        </div>
+      </a>
+      <a class="active item">
+        <div class="content">
+          <h3 class="header"><i class="fa fa-user"></i>&nbsp;Stevie Feliciano</h3>
+          <div class="description">
+            <p><i class="fa fa-check-circle"></i> Acceted</p>
+          </div>
+        </div>
+      </a>
+      <a class="item">
+        <div class="content">
+          <h3 class="header"><i class="fa fa-user"></i>&nbsp;Stevie Feliciano</h3>
+          <div class="description">
+            <p><i class="fa fa-check-circle"></i> Acceted</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="ui ten wide column ">
+    <div class="ui segments">
+      <div class="ui segment">
+        <h1 class="header"><i class="fa fa-check-circle"></i> Acceted</h1>
+        <timer countdown="1800" interval="1000">
+          <div class="progress progress-striped active"style="height: 30px;">
+            Remaining time : {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}} ({{progressBar}}%).
+          </div>
+        </timer>
+      </div>
+      <div class="ui horizontal segments">
+        <div class="ui segment">
+          <p><i class="fa fa-user"></i>&nbsp;Stevie Feliciano</p>
+        </div>
+        <div class="ui segment">
+          <p><i class="fa fa-phone"></i>&nbsp;0700 000 000</p>
+        </div>
+        <div class="ui segment">
+          <p><i class="fa fa-envelope"></i>&nbsp;name@example.com</p>
+        </div>
+      </div>
+      <div class="ui segment">
+        <div class="ui divided items">
+          <div class="item">
+            <div class="content">
+              <div class="header">1x Curry</div>
+              <div class="meta">
+                <span class="price">£ 11.20</span>
+                <br />
+                <span class="stay">Sauce: Hot (+1.50)</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="content">
+              <div class="header">1x Rice</div>
+              <div class="meta">
+                <span class="price">£ 5.20</span>
+                <br />
+                <span class="stay">Sauce: Hot (+1.50)</span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="content">
+              <div class="header">Total</div>
+              <div class="meta">
+                <span class="price">£ 5.20</span>
+              </div>
+              <div class="description">
+                <p><i class="fa fa-info-circle"></i> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.ui.search.dropdown')
+    .dropdown({
+      maxSelections: 3
+    })
+  ;
+});
+</script>

@@ -1,0 +1,46 @@
+<div class="ui inverted vertical lead center aligned segment">
+
+  <div class="ui container top-menu">
+    <div class="ui large inverted menu">
+      <a class="item header site-name">Hot Pot</a>
+      <div class="right item">
+        <a class="ui inverted button">Become a caterer</a>
+        <a class="item">Help</a>
+        <div dropdown class="ui simple dropdown item user" ng-if="currentUser">
+          <i class="fa fa-user"></i>&nbsp;{{ currentUser.name }}<i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">Order history</a>
+            <a class="item">Account</a>
+            <a class="item">Logout</a>
+          </div>
+        </div>
+        <a class="item" ng-if="!currentUser">Register</a>
+        <a class="item" ng-click="signIn()" ng-if="!currentUser">Sign in</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui text container">
+    <h1 class="ui inverted header lobster">Welcome to Hot Pot</h1>
+    <h2>Get fresh home-made food</h2>
+
+    <form class="ui form search-form">
+      <div class="field">
+        <div class="ui action input">
+          <input type="text" placeholder="Post code...">
+          <button class="ui button">Find food</button>
+        </div>
+      </div>
+      <div class="ui buttons">
+        <button class="ui inverted button">All</button>
+        <button class="ui inverted button">Delivery {{deliveryMode}}</button>
+        <button class="ui inverted button">Collection</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<div class="ui container">
+
+</div>

@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'Icons';
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/themes/default/assets/fonts/icons.eot");
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/themes/default/assets/fonts/icons.eot?#iefix") format('embedded-opentype'),
+       url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/themes/default/assets/fonts/icons.woff2") format('woff2'),
+       url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/themes/default/assets/fonts/icons.woff") format('woff'),
+       url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/themes/default/assets/fonts/icons.ttf") format('truetype'),
+       url("https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/themes/default/assets/fonts/icons.svg#icons") format('svg');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+a:hover {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+a.icon-link {
+  .svg24 {
+    height: 24px;
+    width: 24px;
+  }
+  span {
+    top: -.4em;
+    position: relative;
+  }
+}
+
+a.icon-link:hover {
+  i {
+    path {
+      fill: $accent-color;
+    }
+  }
+  span {
+    color: $primary-color;
+  }
+}
+
+.ui.inverted.segment, .ui.primary.inverted.segment {
+  background: $midnight-blue;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ui.items > .item .meta {
+  color: $primary-color;
+
+  &.selected {
+    span{
+      color: $dark-primary-color;
+    }
+  }
+}
+
+.ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+  background-color: $dark-primary-color !important;
+}
+.ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+  background-color: $dark-primary-color !important;
+}
+
+.ui.steps .step.active .title {
+  color: $accent-color;
+}
+
+.ui.steps .step.completed > .icon:before, .ui.ordered.steps .step.completed:before {
+  color: $primary-color;
+}
+
+.ui.progress .bar {
+  display: block;
+  line-height: 1;
+  position: relative;
+  width: 0%;
+  min-width: 2em;
+  background: $dark-primary-color;
+  border-radius: 0.28571429rem;
+  -webkit-transition: width 0.1s ease, background-color 0.1s ease;
+  transition: width 0.1s ease, background-color 0.1s ease;
+}
+.ui.progress.success > .label {
+  color: $accent-color;
+}
+
+
+.ui.progress.success .bar {
+  background-color: $primary-color !important;
+}
+
+.ui.action.input:not([class*="left action"]) input:focus {
+  border-right-color: $primary-color !important;
+}
+
+.ui.form input:not([type]):focus, .ui.form input[type="date"]:focus, .ui.form input[type="datetime-local"]:focus, .ui.form input[type="email"]:focus, .ui.form input[type="number"]:focus, .ui.form input[type="password"]:focus, .ui.form input[type="search"]:focus, .ui.form input[type="tel"]:focus, .ui.form input[type="time"]:focus, .ui.form input[type="text"]:focus, .ui.form input[type="url"]:focus {
+  color: rgba(0, 0, 0, 0.95);
+  border-color: $primary-color !important;
+  border-radius: 0.28571429rem;
+  background: #ffffff;
+  box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
+}

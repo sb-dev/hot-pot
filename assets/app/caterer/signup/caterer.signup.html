@@ -1,0 +1,76 @@
+<div class="ui fluid middle aligned center aligned grid single-form">
+  <div class="column form-container">
+    <h1 class="ui teal">
+      <div class="content">
+        <a ui-sref="main.home" class="site-name lobster">Hot Pot</a>
+      </div>
+    </h1>
+    <h2 class="ui dividing header">Caterer sign up</h2>
+    <form class="ui form" ng-submit="submitCatererSignupForm(signup)" name="signupForm" novalidate>
+      <div class="required field" ng-class="{'error':(signupForm.firstName.$invalid &&
+                         signupForm.firstName.$dirty) || (signupForm.lastName.$invalid &&
+                                            signupForm.lastName.$dirty)}">
+        <label>Name</label>
+        <div class="two fields">
+          <div class="required field">
+            <input type="text" name="firstName" placeholder="First Name" ng-model="signup.firstName" ng-maxlength="50" required>
+            <div class="help-block has-error" ng-if="signupForm.firstName.$dirty">
+              <span ng-show="signupForm.firstName.$error.required">First name is required.</span>
+              <span ng-show="signupForm.firstName.$error.maxlength">The first name cannot be more than 50 characters.</span>
+            </div>
+          </div>
+          <div class="required field">
+            <input type="text" placeholder="Last Name" name="lastName" ng-model="signup.lastName" ng-maxlength="50" required>
+            <div class="help-block has-error" ng-if="signupForm.lastName.$dirty">
+              <span ng-show="signupForm.lastName.$error.required">Last name is required.</span>
+              <span ng-show="signupForm.lastName.$error.maxlength">The last name cannot be more than 50 characters.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="required field"
+           ng-class="{'error':signupForm.email.$invalid &&
+                              signupForm.email.$dirty}">
+        <label>Email Address</label>
+        <div class="sixteen wide field">
+          <input type="email" placeholder="E.g. name@example.com" name="email" ng-model="signup.email" required>
+          <div class="help-block has-error" ng-if="signupForm.email.$dirty">
+            <span ng-show="signupForm.email.$error.required">Email address is required.</span>
+            <span ng-show="signupForm.email.$error.email">Not a valid email address.</span>
+            <span ng-show="signupForm.email.$error.duplicateEmail">Email address already in use.</span>
+          </div>
+        </div>
+      </div>
+      <div class="required field"
+           ng-class="{'error':signupForm.password.$invalid &&
+                         signupForm.password.$dirty}">
+        <label>Password</label>
+        <input type="password" placeholder="Password" name="password" ng-model="signup.password" ng-minlength="6" required>
+        <span class="help-block has-error" ng-if="signupForm.password.$dirty">
+          <span ng-show="signupForm.password.$error.required">Password is required.</span>
+          <span ng-show="signupForm.password.$error.minlength">Password must be at least 6 characters.</span>
+        </span>
+      </div>
+      <button type="submit" ng-class="{'loading':formLoading}" class="ui fluid large teal submit button">Sign up</button>
+    </form>
+  </div>
+</div>
+<div class="ui fluid middle aligned center aligned grid cooking-tools-bg how-it-works">
+  <div class="ui container">
+    <h1 class="ui header">How it works</h1>
+    <div class="ui center aligned grid">
+      <div class="five wide column">
+        <h1 class="ui header">List</h1>
+        <p>Upload photos, description and ingredients for your delicious dish, and tell us when it will be ready</p>
+      </div>
+      <div class="five wide column">
+        <h1 class="ui header">Sell</h1>
+        <p>When someone buys a portion, we'll show you who they are and when they'll be ready to pick it up</p>
+      </div>
+      <div class="five wide column">
+        <h1 class="ui header">Earn</h1>
+        <p>You'll earn money for every dish sold, which we'll transfer to you at the end of every week</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="ui middle aligned center aligned grid single-form">
+  <div class="column form-container">
+    <h2 class="ui teal image header">
+      <div class="content">
+        Hot Pot
+      </div>
+    </h2>
+    <h1 class="ui dividing header">Login</h1>
+    <iframe src="sink.html" name="sink"
+        style="display:none"></iframe>
+    <form class="ui large form"
+      action="sink.html" target="sink" method="post"
+      ng-submit="submitLoginForm(credentials)"
+      name="login"
+      novalidate form-autofill-fix>
+      <div class="ui stacked">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="E-mail address" ng-model="credentials.email" required>
+            <div class="help-block has-error" ng-if="credentials.email.$dirty">
+              <span ng-show="credentials.email.$error.required">Email is required.</span>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password" ng-model="credentials.password" required>
+            <div class="help-block has-error" ng-if="credentials.password.$dirty">
+              <span ng-show="credentials.pasword.$error.required">Email is required.</span>
+            </div>
+          </div>
+        </div>
+        <button type="submit"  class="ui fluid large teal submit button" ng-class="{'loading':signupForm.loading}" ng-disabled="login.$invalid">Login</button>
+      </div>
+      <div class="ui error message"></div>
+    </form>
+    <div class="ui message">
+      Don't have an account? <a ui-sref="register">Sign Up</a>
+    </div>
+  </div>
+</div>

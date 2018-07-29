@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Appetizer",
+    "uid": "Appetizer"
+  },
+  {
+    "name": "Breakfast and Brunch",
+    "uid": "Breakfast and Brunch"
+  },
+  {
+    "name": "Appetizers",
+    "uid": "Appetizers"
+  },
+  {
+    "name": "Dinner",
+    "uid": "Dinner"
+  },
+  {
+    "name": "Drinks",
+    "uid": "Drinks"
+  },
+  {
+    "name": "Lunch",
+    "uid": "Lunch"
+  },
+  {
+    "name": "Side dishes",
+    "uid": "Side dishes"
+  },
+  {
+    "name": "Snack",
+    "uid": "Snack"
+  },
+  {
+    "name": "Main Course",
+    "uid": "Main Course"
+  }
+]

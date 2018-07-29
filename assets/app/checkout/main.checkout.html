@@ -1,0 +1,158 @@
+<div class="ui container">
+<div class="ui stackable grid">
+  <div class="ui twelve wide column step-form" ui-view>
+    <div class="ui container grid">
+      <div class="ui six wide column">
+        <h4 class="ui dividing header">Step 1:</h4>
+        <h2 class="ui header">Delivery Address</h2>
+        <p>Please select a location or entre a new one</p>
+      </div>
+      <div class="ui ten wide column ">
+        <form class="ui form">
+          <div class="field">
+            <label>Location</label>
+            <div class="ui fluid search selection dropdown">
+              <input type="hidden" name="country">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select location or enter new one</div>
+              <div class="menu">
+                <div class="item" data-value="af">Home</div>
+                <div class="item" data-value="ax"></i>Work</div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Address</label>
+            <div class="two fields">
+              <div class="field">
+                <input type="text" name="shipping[address]" placeholder="Line #1">
+              </div>
+              <div class="field">
+                <input type="text" name="shipping[address-2]" placeholder="Line #2">
+              </div>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <label>Post code</label>
+              <input type="text" name="shipping[first-name]" placeholder="E.G. SW1A 1AA">
+            </div>
+            <div class="field">
+              <label>Mobile number</label>
+              <input type="text" name="shipping[last-name]" placeholder="E.g. 07xxx xxxxxx">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="ui container grid">
+      <div class="ui six wide column">
+        <h4 class="ui dividing header">Step 2:</h4>
+        <h2 class="ui header">Payment details</h2>
+        <p>Please enter your payment details</p>
+      </div>
+      <div class="ui ten wide column ">
+        <form class="ui form">
+          <div class="field">
+            <label>Payment method</label>
+            <div class="ui fluid search selection dropdown">
+              <input type="hidden" name="country">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select a payment method</div>
+              <div class="menu">
+                <div class="item" data-value="af"><i class="fa fa-paypal"></i>&nbsp;Paypal</div>
+                <div class="item" data-value="ax"><i class="fa fa-cc-visa"></i>&nbsp;Visa</div>
+                <div class="item" data-value="al"><i class="fa fa-credit-card"></i>&nbsp;Credit Card</div>
+                <div class="item" data-value="al"><i class="fa fa-cc-amex"></i>&nbsp;American Express</div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Card Number</label>
+            <input type="text" name="card[number]" maxlength="16" placeholder="Card #">
+          </div>
+            <div class="fields">
+              <div class="twelve wide field">
+                <label>Expiration</label>
+                <div class="two fields">
+                  <div class="field">
+                    <select class="ui fluid search dropdown" name="card[expire-month]">
+                      <option value="">Month</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year">
+                  </div>
+                </div>
+              </div>
+              <div class="four wide field">
+                <label>CVC</label>
+                <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC">
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="ui container right aligned">
+      <div class="ui button" tabindex="0" ui-sref="confirmation"><i class="fa fa-lock"></i>Confirm and Pay</div>
+    </div>
+
+  </div>
+  <div class="four wide column your-order hidden-small" ng-show="showOrderDetails">
+    <h1>Your order</h1>
+    <div class="estimated-delivery-time-container">
+      <div class="estimated-delivery-time">
+        <div class="header">estimated time</div>
+        <div class="time" ng-switch="order.estimatedTime">
+          <span ng-switch-when="null">-&nbsp;-</span>
+          <span ng-switch-default>{{ order.estimatedTime }}</span>
+        </div>
+        <div class="unit">minutes</div>
+      </div>
+    </div>
+    <div class="ui middle aligned divided list">
+      <div class="item" ng-repeat="item in order.items">
+        <div class="right floated content">
+          <div class="header">{{ item.price|currency:"£" }}</div>
+        </div>
+        <div class="content">
+          <p>{{item.quantity}}x {{ item.dish.name | ucfirst}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="ui middle aligned divided list bill">
+      <div class="item">
+        <div class="right floated content">
+          <div class="header price">{{ order.total|currency:"£" }}</div>
+        </div>
+        <div class="content total-label">
+          Total
+        </div>
+      </div>
+      <div class="item" ng-if="currentOrder.completed">
+        <div class="content">
+          <h2 class="header">Order placed</h2>
+          <div class="description">
+            <h3>For delivery</h3>
+            samir <br />
+            flat 3, 33 fernwood avenue, London <br />
+            SW16 1RD
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

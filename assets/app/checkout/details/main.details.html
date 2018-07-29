@@ -1,0 +1,141 @@
+<div>
+  <form class="ui stackable grid form" ng-submit="confirmCheckout(deliveryDetails, collectionDetails, paymentDetails)" name="checkoutDetailsForm" novalidate>
+    <div class="ui six wide column" ng-if="order.service === 'delivery'">
+      <h4 class="ui dividing header">Step 1:</h4>
+      <h2 class="ui header">Delivery Address</h2>
+      <p>Please select a location or entre a new one</p>
+    </div>
+    <div class="ui ten wide column" ng-if="order.service === 'delivery'">
+        <div class="field">
+          <label>Location</label>
+          <div class="ui fluid search selection dropdown" combobox>
+            <input type="hidden" name="country">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select location or enter new one</div>
+            <div class="menu">
+              <div class="item" data-value="af">Home</div>
+              <div class="item" data-value="ax"></i>Work</div>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Address</label>
+          <div class="two fields">
+            <div class="field">
+              <input type="text" name="address1" placeholder="Line #1" ng-model="deliveryDetails.address1">
+            </div>
+            <div class="field">
+              <input type="text" name="address2" placeholder="Line #2" ng-model="deliveryDetails.address2">
+            </div>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Post code</label>
+            <input type="text" name="postcode" placeholder="E.G. SW1A 1AA" ng-model="deliveryDetails.postcode">
+          </div>
+          <div class="field">
+            <label>Mobile number</label>
+            <input type="text" name="phone" placeholder="E.g. 07xxx xxxxxx" ng-model="deliveryDetails.mobilePhone">
+          </div>
+        </div>
+    </div>
+    <div class="ui six wide column" ng-if="order.service === 'collection'">
+      <h4 class="ui dividing header">Step 1:</h4>
+      <h2 class="ui header">Order details</h2>
+      <p>Please enter the order details</p>
+    </div>
+    <div class="ui ten wide column" ng-if="order.service === 'collection'">
+        <div class="field">
+          <label>Notes</label>
+          <textarea rows="2" name="notes" ng-model="collectionDetails.notes"></textarea>
+        </div>
+        <div class="required field" ng-class="{'error':checkoutDetailsForm.phone.$invalid &&
+          checkoutDetailsForm.phone.$dirty}">
+          <label>Mobile number</label>
+          <input type="text" name="phone" placeholder="E.g. 07xxx xxxxxx" ng-model="collectionDetails.mobilePhone" required>
+        </div>
+    </div>
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 2:</h4>
+      <h2 class="ui header">Payment details</h2>
+      <p>Please enter your payment details</p>
+    </div>
+    <div class="ui ten wide column ">
+        <div class="field" ng-if="currentUser.paymentMethods">
+          <label>Saved payment methods</label>
+          <div class="ui fluid search selection dropdown" name="elementName" items="currentUser.paymentMethods" value="selectedPaymentMethodId" paymentmethodcombobox>
+            <!--<input type="hidden" name="country">-->
+            <!--<i class="dropdown icon"></i>-->
+            <!--<div class="default text">Select a payment method</div>-->
+            <!--<div class="menu">-->
+              <!--&lt;!&ndash; <div class="item" data-value="paymentMethod.uid" ng-switch-when="matchValue1">-->
+                <!--<i class="fa fa-paypal"></i>&nbsp;Paypal-->
+                <!--<br />-->
+                <!--<span class="note">samir.benzenine@wanadoo.fr</span>-->
+              <!--</div> &ndash;&gt;-->
+              <!--<div class="item" ng-repeat="paymentMethod in currentUser.paymentMethods" data-value="{{paymentMethod.uid}}" ng-switch="paymentMethod.cardType" >-->
+                <!--<div class="card-type">-->
+                  <!--<i ng-switch-when="American Express" class="american express icon"></i>-->
+                  <!--<i ng-switch-when="Discover" class="discover icon"></i>-->
+                  <!--<i ng-switch-when="Mastercard" class="mastercard icon"></i>-->
+                  <!--<i ng-switch-when="Visa" class="visa icon"></i>-->
+                  <!--<i ng-switch-default class="fa fa-credit-card"></i>-->
+                  <!--{{paymentMethod.cardType}}-->
+                <!--</div><br />-->
+                <!--<span class="note">{{paymentMethod.expirationMonth}}/{{paymentMethod.expirationYear}} - {{paymentMethod.maskedNumber}}</span>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+        </div>
+        <div class="required field" ng-class="{'error':checkoutDetailsForm.cardNumber.$invalid &&
+          checkoutDetailsForm.cardNumber.$dirty}">
+          <label>Card Number</label>
+          <input type="text" name="cardNumber" maxlength="16" placeholder="Card #" ng-model="paymentDetails.card.number" required>
+        </div>
+          <div class="required fields">
+            <div class="twelve wide field" ng-class="{'error':(checkoutDetailsForm.expireMonth.$invalid &&
+                              checkoutDetailsForm.expireMonth.$dirty) || (checkoutDetailsForm.expireYear.$invalid &&
+                              checkoutDetailsForm.expireYear.$dirty)}">
+              <label>Expiration</label>
+              <div class="two fields">
+                <div class="field">
+                  <select class="ui fluid search dropdown" name="expireMonth" ng-model="paymentDetails.card.expireMonth" required>
+                    <option value="">Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <input type="text" name="expireYear" maxlength="4" placeholder="Year" ng-model="paymentDetails.card.expireYear" required>
+                </div>
+              </div>
+            </div>
+            <div class="four wide required field" ng-class="{'error':checkoutDetailsForm.cvc.$invalid &&
+              checkoutDetailsForm.cvc.$dirty}">
+              <label>CVC</label>
+              <input type="text" name="cvc" maxlength="3" placeholder="CVC" ng-model="paymentDetails.card.cvc" required>
+            </div>
+          </div>
+          <div class="inline field">
+            <checkbox ng-class="toggle" checked="true" ng-model="paymentDetails.savePaymentMethod">Save payment method</checkbox>
+            <div class="help-block has-error" ng-if="checkoutDetails.error">
+              <span>{{checkoutDetails.message}}</span>
+            </div>
+          </div>
+    </div>
+    <div class="ui container right aligned responsive">
+      <button class="ui button responsive" ng-class="{'loading':formLoading}" tabindex="0"><i class="fa fa-lock"></i>Confirm and Pay</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+.ui.teal.header {
+  color: $primary-color !important;
+}
+
+a.ui.teal.header:hover {
+  color: #009c95 !important;
+}
+
+.ui.inverted.attached.header {
+  background: $midnight-blue linear-gradient(transparent, rgba(0, 0, 0, 0.05));
+}

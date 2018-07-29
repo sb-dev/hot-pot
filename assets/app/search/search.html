@@ -1,0 +1,183 @@
+<div class="ui inverted vertical search center aligned segment">
+
+  <div class="ui container head">
+    <div class="ui large secondary inverted pointing menu">
+      <a class="item header site-name">Hot Pot</a>
+      <div class="right item">
+        <a class="ui inverted button">Login</a>
+        <a class="item">Help</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui text container head">
+    <p>Fresh food available in</p>
+    <h1 class="ui inverted header">clapham</h1>
+  </div>
+
+</div>
+
+<div class="ui container">
+  <form class="ui form inline-form">
+    <div class="fields">
+      <div class="two wide field">
+        <label>Post code</label>
+        <input type="text" name="postCode" placeholder="E.G. SW1A 1AA">
+      </div>
+      <div class="two wide field">
+        <label>Day</label>
+        <select class="ui fluid dropdown">
+          <option value="" selected="">Today</option>
+          <option value="">Tomorrow</option>
+        </select>
+      </div>
+      <div class="two wide field">
+        <label>Time</label>
+        <select class="ui fluid dropdown">
+          <option value="" selected="">ASAP</option>
+          <option value="">22:45</option>
+          <option value="">23:00</option>
+        </select>
+      </div>
+      <div class="ui button" tabindex="0">Update</div>
+      <div class="six wide field">
+        &nbsp;
+      </div>
+      <div class="two wide field">
+        <label>Sort by</label>
+        <select class="ui fluid dropdown">
+          <option value="" selected="">Distance</option>
+          <option value="">Delivery time</option>
+          <option value="">Cuisine</option>
+          <option value="">Price</option>
+        </select>
+      </div>
+      <button class="ui basic button" tabindex="0">Filter</button>
+    </div>
+  </form>
+</div>
+
+<div class="ui container grid">
+  <div class="four wide column food-tags-sidebar">
+    <div class="ui styled accordion">
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Cuisine
+      </div>
+      <div class="content">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item active">
+            American
+          </a>
+          <a class="item">
+            British
+          </a>
+          <a class="item">
+            Caribbean
+          </a>
+          <a class="item">
+            Chinese
+          </a>
+        </div>
+      </div>
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Diet and Lifestyle
+      </div>
+      <div class="content">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item">
+            Gluten free
+          </a>
+          <a class="item">
+            Heart-Healthy
+          </a>
+          <a class="item">
+            Low-Fat
+          </a>
+          <a class="item">
+            Vegetarian
+          </a>
+        </div>
+      </div>
+      <div class="title">
+        <i class="dropdown icon"></i>
+        Meal
+      </div>
+      <div class="content">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item">
+            Beakfast
+          </a>
+          <a class="item">
+            Lunch
+          </a>
+          <a class="item">
+            Dinner
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui divided items twelve wide column">
+    <div class="item clickable" ui-sref="menu">
+      <div class="ui small image">
+        <img src="/images/curry.jpg">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          Christmas Breakfast
+        </div>
+        <div class="meta">
+          <span class="price">0.4KM | 60MINS | £££ | vietnamese</span>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dia.</p>
+          <input-stars max="5" readonly="true" ng-model="3"></input-stars>(320)
+        </div>
+      </div>
+    </div>
+    <div class="item clickable" ui-sref="menu">
+      <div class="ui small image">
+        <img src="/images/curry.jpg">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          Content B
+        </div>
+        <div class="meta">
+          <span class="price">0.4KM | 60MINS | £££ | vietnamese</span>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam non.</p>
+          <input-stars max="5" readonly="true" ng-model="3"></input-stars>
+        </div>
+      </div>
+    </div>
+    <div class="item clickable" ui-sref="menu">
+      <div class="ui small image">
+        <img src="/images/curry.jpg">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          Content C
+        </div>
+        <div class="meta">
+          <span class="price">0.4KM | 60MINS | £££ | vietnamese</span>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing el.</p>
+          <input-stars max="5" readonly="true" ng-model="3"></input-stars>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.ui.accordion')
+    .accordion()
+  ;
+});
+</script>

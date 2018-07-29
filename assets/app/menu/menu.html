@@ -1,0 +1,182 @@
+<div class="ui inverted vertical search center aligned segment">
+  <div class="ui container head">
+    <div class="ui large secondary inverted pointing menu">
+      <a class="item header site-name">Hot Pot</a>
+      <div class="right item">
+        <a class="item">
+          <i class="fa fa-shopping-basket"></i> £6.00
+        </a>
+        <a class="ui inverted button">Login</a>
+        <a class="item">Help</a>
+      </div>
+    </div>
+  </div>
+  <div class="ui text container head">
+    <div class="menu-cover"></div>
+    <p>Online delivery menu</p>
+    <h1 class="ui inverted header">Samir's Kitchen</h1>
+  </div>
+  <div class="ui container head left aligned">
+    <a ui-sref="search" class="left item back-link"><i class="fa fa-angle-left fa-3"></i> Back to results</a>
+  </div>
+</div>
+
+<div class="ui container margin">
+  <div class="ui two column centered grid">
+    <div class="ui horizontal list menu-details">
+      <div class="item">
+        <div class="content">
+          <div class="header">cuisine</div>
+          Pizza
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <div class="header">opening hours</div>
+          Open until 23:00
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <div class="header">distance</div>
+          400m
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <div class="header">address</div>
+          2A Sunnyhill Rd, London, SW162UH
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <div class="header">phone</div>
+          +442087694966
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui container grid food-list-container">
+  <div class="ui divided items twelve wide column">
+    <div class="item">
+      <div class="ui small image">
+        <img src="/images/curry.jpg">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          Content A
+        </div>
+        <div class="meta">
+          <span class="price">£3.00</span>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed dia.</p>
+          <input-stars max="5" readonly="true" ng-model="3"></input-stars>
+        </div>
+        <div class="extra">
+          <div class="ui right floated button">
+            add
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui small image">
+        <img src="/images/curry.jpg">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          Content B
+        </div>
+        <div class="meta">
+          <span class="price">£3.00</span>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam non.</p>
+          <input-stars max="5" readonly="true" ng-model="3"></input-stars>
+        </div>
+        <div class="extra">
+          <div class="ui right floated button">
+            add
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="ui small image">
+        <img src="/images/curry.jpg">
+      </div>
+      <div class="middle aligned content">
+        <div class="header">
+          Content C
+        </div>
+        <div class="meta">
+          <span class="price">£3.00</span>
+        </div>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing el.</p>
+          <input-stars max="5" readonly="true" ng-model="3"></input-stars>
+        </div>
+        <div class="extra">
+          <div class="ui right floated button">
+            add
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="four wide column your-order no-padding-top">
+    <h1>Your order</h1>
+    <div class="estimated-delivery-time-container">
+      <div class="estimated-delivery-time">
+        <div class="header">estimated time</div>
+        <div class="time">30</div>
+        <div class="unit">minutes</div>
+      </div>
+      <a id="change-delivery-time" href="">Change Delivery Time</a>
+    </div>
+    <div class="ui middle aligned divided list">
+      <div class="item">
+        <div class="right floated content">
+          <div class="header">£3.00</div>
+        </div>
+        <div class="content">
+          <p>1x Content C</p>
+          <div class="ui icon buttons quatity">
+            <button class="mini ui button"><i class="fa fa-minus"></i></button>
+            <button class="mini ui button"><i class="fa fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="right floated content">
+          <div class="header">£3.00</div>
+        </div>
+        <div class="content">
+          <p>1x Content C</p>
+          <div class="ui icon buttons quatity">
+            <button class="mini ui button"><i class="fa fa-minus"></i></button>
+            <button class="mini ui button"><i class="fa fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui middle aligned divided list bill">
+      <div class="item">
+        <div class="right floated content">
+          <div class="header price">£6.00</div>
+        </div>
+        <div class="content total-label">
+          Total
+        </div>
+      </div>
+      <div class="item">
+        <div class="large ui button wide" ui-sref="checkout">
+          Checkout
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <div class="content">
+       Add New Dish
+      </div>
+    </h2>
+  </div>
+</div>
+<div class="step-form">
+  <form class="ui container form grid" ng-submit="submitDishForm(dish)" name="catererDishForm" novalidate>
+    <input type="hidden" name="id" ng-model="dish.uid">
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 1:</h4>
+      <h2 class="ui header">Details</h2>
+      <p>Please enter dish details</p>
+    </div>
+    <div class="ui ten wide column">
+        <div class="required field" ng-class="{'error':catererDishForm.name.$invalid &&
+                         catererDishForm.name.$dirty}">
+          <label>Dish name</label>
+          <input type="text" name="name" placeholder="Name" ng-model="dish.name" ng-maxlength="50" required>
+          <div class="help-block has-error" ng-if="catererDishForm.name.$dirty">
+            <span ng-show="catererDishForm.name.$error.required">Name is required.</span>
+            <span ng-show="catererDishForm.name.$error.maxlength">Name cannot be more than 50 characters.</span>
+          </div>
+        </div>
+        <div class="required field" ng-class="{'error':catererDishForm.description.$invalid &&
+                           catererDishForm.description.$dirty}">
+          <label>Dish description</label>
+          <textarea rows="2" name="description" placeholder="Description" maxlength="140" ng-model="dish.description" ng-maxlength="140" required></textarea>
+          <span>{{ dish.description.length>0?dish.description.length:0 }}/140</span>
+          <div class="help-block has-error" ng-if="catererDishForm.description.$dirty">
+            <span ng-show="catererDishForm.description.$error.required">Description is required.</span>
+            <span ng-show="catererDishForm.description.$error.maxlength">Description cannot be more than 140 characters.</span>
+          </div>
+        </div>
+        <div class="required field" ng-class="{'error':catererDishForm.price.$invalid &&
+                         catererDishForm.price.$dirty}">
+          <label>Price</label>
+          <div class="ui labeled input">
+            <div class="ui label">£</div>
+            <input type="text" name="price" placeholder="Amount" ng-model="dish.price" ng-model-options="{debounce: 1000}" required>
+          </div>
+          <div class="help-block has-error" ng-if="catererDishForm.price.$dirty">
+            <span ng-show="catererDishForm.price.$error.required">Price is required.</span>
+          </div>
+        </div>
+    </div>
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 2:</h4>
+      <h2 class="ui header">Picture</h2>
+      <p>Please upload a picture of the dish</p>
+    </div>
+    <div class="ui ten wide column">
+      <div class="required field" ng-class="{'error':catererDishForm.fileInput.$invalid &&
+                       catererDishForm.fileInput.$dirty}">
+        <div ng-show="imageCropStep == 1">
+          <input class="ui button" type="file" name="fileInput" id="imageInput" onchange="angular.element(this).scope().selectImage(event)" required/>
+        </div>
+
+        <div ng-show="imageCropStep == 2">
+          <sbcropper ng-if="imageSrc" src="imageSrc" ng-model="dish.picture"></sbcropper>
+          <br />
+          <a href="" class="ui button" ng-click="clearImage()">Discard</a>
+          <a href="" class="ui button" ng-click="cropImage()">Crop</a>
+        </div>
+
+        <div ng-show="imageCropStep == 3">
+          <img ng-src="{{dish.picture}}" on-error="{{dish.picture}}" height="140" width="233"/>
+          <br />
+          <a href="" class="ui button" ng-click="clearImage()">Discard</a>
+        </div>
+       </div>
+    </div>
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 3:</h4>
+      <h2 class="ui header">Meta data</h2>
+      <p>Please enter dish meta data</p>
+    </div>
+    <div class="ui ten wide column">
+        <div class="field">
+          <label>Cuisine</label>
+          <div class="ui fluid search cuisine selection dropdown" value="dish.cuisine" name="cuisineElement" items="availableCuisines" combobox></div>
+        </div>
+        <div class="field">
+          <label>Dish</label>
+          <div class="ui fluid search cuisine selection dropdown" value="dish.dishType" name="dishTypeElement" items="availableDishes" combobox></div>
+        </div>
+        <div class="field">
+          <label>Meal</label>
+          <div class="ui fluid search cuisine selection dropdown" value="dish.meal" name="mealElement" items="availableMeals" combobox></div>
+        </div>
+    </div>
+    <div class="ui container right aligned">
+      <button class="ui button" ng-class="{'loading':form.loading}" tabindex="0">Save</button>
+    </div>
+  </form>
+</div>

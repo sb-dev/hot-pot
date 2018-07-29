@@ -1,0 +1,79 @@
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui teal image header">
+      <div class="content">
+        Caterer profile
+      </div>
+    </h2>
+  </div>
+</div>
+<div class="step-form">
+  <form class="ui stackable container form grid" ng-submit="submitCatererProfileForm(profile)" name="catererProfileForm" novalidate>
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 1:</h4>
+      <h2 class="ui header">Details</h2>
+      <p>Please enter your details</p>
+    </div>
+    <div class="ui ten wide column">
+      <div class="required field" ng-class="{'error':catererProfileForm.name.$invalid &&
+                         catererProfileForm.name.$dirty}">
+          <label>Caterer name</label>
+          <input type="text" name="name" placeholder="Name" ng-model="profile.name" ng-maxlength="50" required>
+          <div class="help-block has-error" ng-if="catererProfileForm.name.$dirty">
+            <span ng-show="catererProfileForm.name.$error.required">Name is required.</span>
+            <span ng-show="catererProfileForm.name.$error.maxlength">Name cannot be more than 50 characters.</span>
+          </div>
+        </div>
+        <div class="required field" ng-class="{'error':catererProfileForm.phoneNumber.$invalid &&
+                           catererProfileForm.phoneNumber.$dirty}">
+          <label>Caterer phone number</label>
+          <input type="text" name="phoneNumber" placeholder="Phone #" ng-model="profile.phoneNumber" ng-maxlength="12" required>
+          <div class="help-block has-error" ng-if="catererProfileForm.phoneNumber.$dirty">
+            <span ng-show="catererProfileForm.phoneNumber.$error.required">Phone number is required.</span>
+            <span ng-show="catererProfileForm.phoneNumber.$error.maxlength">Phone number cannot be more than 12 characters.</span>
+          </div>
+        </div>
+    </div>
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 2:</h4>
+      <h2 class="ui header">Address</h2>
+      <p>Please enter your address</p>
+    </div>
+    <div class="ui ten wide column">
+        <div class="required field" ng-class="{'error':catererProfileForm.postcode.$invalid &&
+                         catererProfileForm.postcode.$dirty}">
+          <label>Post code</label>
+          <input type="text" name="postcode" placeholder="E.G. SW1A 1AA" ng-model="profile.postcode" ng-maxlength="8" required>
+          <div class="help-block has-error" ng-if="catererProfileForm.postcode.$dirty">
+            <span ng-show="catererProfileForm.postcode.$error.required">Postcode is required.</span>
+            <span ng-show="catererProfileForm.postcode.$error.maxlength">Postcode cannot be more than 8 characters.</span>
+          </div>
+        </div>
+        <div class="required field" ng-class="{'error':catererProfileForm.street.$invalid &&
+                           catererProfileForm.street.$dirty}">
+          <label>Street number and name</label>
+          <input type="text" name="street" placeholder="Street # and name" ng-model="profile.street" ng-maxlength="50" required>
+          <div class="help-block has-error" ng-if="catererProfileForm.street.$dirty">
+            <span ng-show="catererProfileForm.street.$error.required">Street # and name are required.</span>
+            <span ng-show="catererProfileForm.street.$error.maxlength">Street # and name cannot be more than 50 characters.</span>
+          </div>
+        </div>
+    </div>
+    <div class="ui six wide column">
+      <h4 class="ui dividing header">Step 3:</h4>
+      <h2 class="ui header">Pick up location</h2>
+      <p>Please select a location where people can pick up your meals</p>
+    </div>
+    <div class="ui ten wide column">
+      <div class="field">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+          <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id" ng-if="marker">
+          </ui-gmap-marker>
+        </ui-gmap-google-map>
+      </div>
+    </div>
+    <div class="ui container right aligned">
+      <button class="ui button" ng-class="{'loading':form.loading}" tabindex="0">Save</button>
+    </div>
+  </form>
+</div>

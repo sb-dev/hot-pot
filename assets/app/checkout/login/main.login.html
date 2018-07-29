@@ -1,0 +1,108 @@
+<div class="ui container grid">
+  <div class="ui four wide column">
+  </div>
+  <div class="ui twelve wide column ">
+    <h1 class="ui dividing header">create an account</h1>
+    <form class="ui form" ng-submit="submitUserSignupForm(signup)" name="signupForm" novalidate>
+      <div class="required field" ng-class="{'error':(signupForm.firstName.$invalid &&
+                         signupForm.firstName.$dirty) || (signupForm.lastName.$invalid &&
+                                            signupForm.lastName.$dirty)}">
+        <label>Name</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="firstName" placeholder="First Name" ng-model="signup.firstName" ng-maxlength="50" required>
+            <div class="help-block has-error" ng-if="signupForm.firstName.$dirty">
+              <span ng-show="signupForm.firstName.$error.required">First name is required.</span>
+              <span ng-show="signupForm.firstName.$error.maxlength">The first name cannot be more than 50 characters.</span>
+            </div>
+          </div>
+          <div class="required field">
+            <input type="text" name="lastName" placeholder="Last Name" ng-model="signup.lastName" ng-maxlength="50" required>
+            <div class="help-block has-error" ng-if="signupForm.lastName.$dirty">
+              <span ng-show="signupForm.lastName.$error.required">Last name is required.</span>
+              <span ng-show="signupForm.lastName.$error.maxlength">The last name cannot be more than 50 characters.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="required field"
+           ng-class="{'error':signupForm.email.$invalid &&
+                              signupForm.email.$dirty}">
+        <label>Email Address</label>
+          <div class="sixteen wide field">
+            <input type="text" name="email" placeholder="E.g. name@example.com" name="email" ng-model="signup.email" required>
+            <div class="help-block has-error" ng-if="signupForm.email.$dirty">
+              <span ng-show="signupForm.email.$error.required">Email address is required.</span>
+              <span ng-show="signupForm.email.$error.email">Not a valid email address.</span>
+              <span ng-show="signupForm.email.$error.duplicate">Email address already in use.</span>
+            </div>
+          </div>
+      </div>
+      <div class="two fields">
+        <div class="required field"
+             ng-class="{'error':signupForm.password.$invalid &&
+                           signupForm.password.$dirty}">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Password" ng-model="signup.password" ng-minlength="6" required>
+          <span class="help-block has-error" ng-if="signupForm.password.$dirty">
+            <span ng-show="signupForm.password.$error.required">Password is required.</span>
+            <span ng-show="signupForm.password.$error.minlength">Password must be at least 6 characters.</span>
+          </span>
+        </div>
+        <div class="required field"
+             ng-class="{'error':signupForm.phone.$invalid &&
+                           signupForm.phone.$dirty}">
+          <label>Mobile Phone</label>
+          <input type="text" name="phone" placeholder="E.g. 07xxx xxxxxx" ng-model="signup.mobilePhone" ng-minlength="11" required>
+          <span class="help-block has-error" ng-if="signupForm.phone.$dirty">
+            <span ng-show="signupForm.phone.$error.required">Phone number is required.</span>
+            <span ng-show="signupForm.phone.$error.minlength">Password must be at least 11 characters.</span>
+          </span>
+        </div>
+      </div>
+      <div class="ui container right aligned">
+        <button class="ui button" ng-class="{'loading':signupFormLoading}" type="submit" tabindex="0">Continue</button>
+      </div>
+    </form>
+    <div class="ui horizontal divider">
+      Or
+    </div>
+    <div class="ui container center aligned">
+      <button class="ui facebook button" ng-click="loginWithFacebook()">
+        <i class="fa fa-facebook"></i>
+        Facebook Login
+      </button>
+      <button class="ui google plus button">
+        <i class="fa fa-google-plus"></i>
+        Google Plus Login
+      </button>
+    </div>
+    <h1 class="ui dividing header">have an account?</h1>
+    <form class="ui form" ng-submit="submitLoginForm(credentials)" name="checkoutLoginForm" novalidate>
+      <div class="two fields">
+        <div class="field" ng-class="{'error':checkoutLoginForm.email.$invalid &&
+                              checkoutLoginForm.email.$dirty}">
+          <label>Email Address</label>
+          <input type="text" name="email" placeholder="E.g. name@example.com" ng-model="credentials.email" required>
+          <div class="help-block has-error" ng-if="checkoutLoginForm.email.$dirty">
+            <span ng-show="checkoutLoginForm.email.$error.required">Email is required.</span>
+          </div>
+        </div>
+        <div class="field" ng-class="{'error':checkoutLoginForm.password.$invalid &&
+                              checkoutLoginForm.password.$dirty}">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Password" ng-model="credentials.password" required>
+          <div class="help-block has-error" ng-if="checkoutLoginForm.password.$dirty">
+            <span ng-show="checkoutLoginForm.password.$error.required">Password is required.</span>
+          </div>
+        </div>
+      </div>
+      <div class="ui container left aligned no-margin">
+        <a>Forgot your Password?</a>
+      </div>
+      <div class="ui container right aligned">
+        <button class="ui button" ng-class="{'loading':loginFormLoading}" type="submit" tabindex="0">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

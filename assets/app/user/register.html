@@ -1,0 +1,75 @@
+<div class="ui fluid middle aligned center aligned grid single-form">
+  <div class="column form-container">
+    <h1 class="ui teal header">
+      <div class="content">
+        Hot Pot
+      </div>
+    </h1>
+    <h2 class="ui dividing header">Sign up</h2>
+    <form class="ui form" ng-submit="submitSignupForm()" name="signup">
+      <div class="required field" ng-class="{'error':(signup.firstName.$invalid &&
+                         signup.firstName.$dirty) || (signup.lastName.$invalid &&
+                                            signup.lastName.$dirty)}">
+        <label>Name</label>
+        <div class="two fields">
+          <div class="required field">
+            <input type="text" name="firstName" placeholder="First Name" ng-model="signupForm.firstName" ng-maxlength="50" required>
+            <div class="help-block has-error" ng-if="signup.firstName.$dirty">
+              <span ng-show="signup.firstName.$error.required">First name is required.</span>
+              <span ng-show="signup.firstName.$error.maxlength">The first name cannot be more than 50 characters.</span>
+            </div>
+          </div>
+          <div class="required field">
+            <input type="text" placeholder="Last Name" name="lastName" ng-model="signupForm.lastName" ng-maxlength="50" required>
+            <div class="help-block has-error" ng-if="signup.lastName.$dirty">
+              <span ng-show="signup.lastName.$error.required">Last name is required.</span>
+              <span ng-show="signup.lastName.$error.maxlength">The last name cannot be more than 50 characters.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="required field"
+           ng-class="{'error':signup.email.$invalid &&
+                              signup.email.$dirty}">
+        <label>Email Address</label>
+        <div class="sixteen wide field">
+          <input type="email" placeholder="E.g. name@example.com" name="email" ng-model="signupForm.email" required>
+          <div class="help-block has-error" ng-if="signup.email.$dirty">
+            <span ng-show="signup.email.$error.required">Email address is required.</span>
+            <span ng-show="signup.email.$error.email">Not a valid email address.</span>
+          </div>
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="required field"
+             ng-class="{'error':signup.password.$invalid &&
+                           signup.password.$dirty}">
+          <label>Password</label>
+          <input type="password" placeholder="Password" name="password" ng-model="signupForm.password" ng-minlength="6" required>
+          <span class="help-block has-error" ng-if="signup.password.$dirty">
+            <span ng-show="signup.password.$error.required">Password is required.</span>
+            <span ng-show="signup.password.$error.minlength">Password must be at least 6 characters.</span>
+          </span>
+        </div>
+        <div class="field">
+          <label>Mobile Phone</label>
+          <input type="text" placeholder="E.g. 07xxx xxxxxx" name="mobilePhone">
+        </div>
+      </div>
+      <button type="submit" ng-class="{'loading':signupForm.loading}" class="ui fluid large teal submit button" ng-disabled="signup.$invalid">Sign up</button>
+    </form>
+    <div class="ui horizontal divider">
+      Or
+    </div>
+    <div class="ui container center aligned">
+      <button class="ui facebook button">
+        <i class="fa fa-facebook"></i>
+        Facebook Login
+      </button>
+      <button class="ui google plus button">
+        <i class="fa fa-google-plus"></i>
+        Google Plus Login
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,701 @@
+/**
+ *  Do not remove the comment below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+//edbe43
+
+.ui.inverted.segment.home {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(bg.png) repeat 0 0, url('/images/home-bg.jpg') repeat 0 0;
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%), url('/images/home-bg.jpg') repeat 0 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.7)), color-stop(100%,rgba(255,255,255,0.7))), url('/images/home-bg.jpg') repeat 0 0;
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url('/images/home-bg.jpg') repeat 0 0;
+  background: -o-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url('/images/home-bg.jpg') repeat 0 0;
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.7) 100%), url('/images/home-bg.jpg') repeat 0 0;
+  background: linear-gradient(to bottom, rgba(63, 75, 86, 0.7) 0%, rgba(255, 255, 255, 0.1) 100%), url("/images/home-bg.jpg") repeat 0 0;
+  background-size: cover;
+}
+
+.cooking-tools-bg {
+  background: linear-gradient(to bottom, rgba(255, 75, 86, 0.2) 0%, rgba(255, 255, 255, 0.5) 100%), url("/images/cookingToolsBg.jpg");
+  background-size: cover;
+  color: white !important;
+}
+
+.how-it-works {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+
+  h1.ui.header {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+  }
+  p{
+    font-size: 1.3125rem;
+    color: rgba(0,0,0,.87);
+    font-weight: 700;
+  }
+}
+
+.main-view {
+  .step-form form {
+    background: url("../images/bg.jpg") 0px 0px repeat scroll transparent;
+    padding-bottom: 20px;
+  }
+}
+
+.ui.large.inverted.menu{
+  background: none !important;
+}
+
+.orderItem {
+  .meta {
+    float: right !important;
+
+    .price {
+      font-weight: bold;
+    }
+  }
+}
+
+.small-side-bar {
+  width: 80px !important;
+  .side-menu-label, .horizontal.divider.header, .header.site-name span {
+    display: none;
+  }
+
+  .header.site-name i {
+    padding-left: 14px;
+  }
+}
+
+.dashboard-content.extended {
+  left: 80px !important;
+}
+
+.footer{
+  .notice {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+.estimatedTime {
+  width: 100% !important;
+}
+
+.card-type {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.site-name{
+  .lobster {
+    font-weight: bold;
+  }
+
+  img{
+    width: 1.8em !important;
+    margin-right: 10px !important;
+  }
+}
+
+.lobster {
+  font-family: Lobster !important;
+}
+
+.form {
+  transition:0.5s linear all;
+}
+
+.meta {
+  .selected {
+    font-weight: bold;
+  }
+}
+
+.note {
+  font-style: italic;
+}
+
+.dropdown {
+  .text {
+    .note {
+      display: none;
+    }
+  }
+}
+
+.scroll {
+  overflow: auto !important;
+}
+
+input[name="postcode"] {
+  text-transform: uppercase;
+}
+
+.ui.vertical.menu {
+    width: auto !important;
+}
+
+.cropArea {
+      background: #E4E4E4;
+      overflow: hidden;
+      width:500px;
+      height:350px;
+    }
+
+.cropping-canvas {
+  border: 2px dashed rgba(34,36,38,.15);
+  border-radius: 5px;
+}
+
+.ui.button.center {
+  width: 136px;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.column.meals {
+  margin-top: 21px;
+}
+
+.toggle-basket-button-container {
+  display: none;
+}
+
+.ui.items>.item.meal {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15),0 0 0 1px rgba(34,36,38,.15);
+  margin: 1rem 0;
+  padding: 1em !important;
+  border-radius: .28571429rem;
+  border: none;
+  margin-top: 1em;
+}
+
+.ui.divided.items>.item.meal:last-child {
+    margin-bottom: 0!important;
+    padding-bottom: 1em!important;
+}
+
+.ui.divided.items>.item.meal:first-child {
+    border-top: none;
+    margin-top: 0!important;
+    padding-top: 1em!important;
+}
+
+.ui.button.edit-search-button {
+  display: none;
+}
+
+.fadein {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  opacity: 1; /* Default value but added for clarity */
+}
+
+/* Initial state when showing */
+.fadein.ng-hide-remove {
+  opacity: 0;
+  display: block !important;
+}
+
+/* Will transition towards this state */
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+}
+
+.ui.basic.red.label.error {
+      background-color: #f2dede !important;
+}
+
+.main-view {
+  background: url("../images/bg.jpg") 0px 0px repeat scroll transparent;
+  height: 100%;
+  width: 100%;
+}
+
+.secondary-view {
+  min-height: calc(100% - 504px);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.help-block {
+  text-align: left !important;
+
+  &.has-error {
+    color: #9f3a38;
+  }
+}
+
+.search-form {
+  width: 302px;
+  margin: 0 auto;
+}
+
+.header.site-name {
+  font-size: 2em;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 54px;
+}
+
+.container.top-menu {
+  margin-top: 0 !important;
+  .item:before, .item:not(.dropdown):hover {
+    background: none !important;
+  }
+  .item.right {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.no-margin.container {
+  margin: 0;
+}
+
+.no-padding-top, .no-padding-top.your-order {
+  padding-top: 0 !important;
+}
+
+.no-side-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.button {
+  i {
+    margin-right: 5px;
+  }
+}
+
+.head.container {
+  margin-top: 0;
+  i {
+    margin-right: 0.5em;
+  }
+  .menu-cover {
+    margin: 0 auto 2em auto;
+    width: 260px;
+    height: 145px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.2),0px 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+.food-tags-sidebar {
+  margin-top: 21px;
+}
+
+.step-form {
+  padding-top: 54px !important;
+
+  h4 {
+    margin-bottom: 5px !important;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+  }
+}
+
+.angular-input-stars {
+  margin: 0;
+}
+
+.wide.button {
+  width: 100%;
+}
+
+a.back-link {
+  letter-spacing: 2px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  i {
+    font-size: 2em;
+    top: 0.15em;
+    position: relative;
+  }
+}
+
+.margin.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.form.inline-form {
+  .button {
+    position: relative;
+    height: 36px;
+    top: 1.7em;
+  }
+  .field {
+    label {
+      text-transform: uppercase !important;
+    }
+  }
+}
+
+.menu-details {
+  text-align: justify;
+  .header {
+    text-transform: capitalize;
+    color: #acb4bc !important;
+  }
+}
+
+.your-order {
+  padding-top: 54px !important;
+  .estimated-delivery-time-container{
+    text-align: center;
+    .estimated-delivery-time {
+      display: block;
+      padding: 10px;
+      border-radius: 3px;
+      background: #121c25;
+      margin: 0 0 10px 0;
+      color: #FFF;
+      overflow: hidden;
+
+      .header {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .time {
+        display: block;
+        font-size: 4em;
+        font-weight: 100;
+        line-height: 1em;
+      }
+
+      .unit {
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.6);
+      }
+    }
+  }
+
+  .ui.list.bill-items {
+    margin-top: 2em;
+    .item {
+      padding: 1em 0;
+      &:hover {
+        .content .quatity {
+          display: block;
+        }
+      }
+      .content {
+        p{
+          margin-bottom: 0;
+        }
+        .button.mini {
+          font-size: .71428571rem !important;
+        }
+        .quatity {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .bill {
+    .price, .total-label {
+      font-size: 1.6em;
+    }
+  }
+}
+
+.food-list-container {
+  margin-top: 24px;
+}
+
+.home.segment {
+  min-height: 600px;
+  padding: 1em 0em;
+
+  h1.ui.header {
+      margin-top: 2em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+  }
+  .action.input {
+    margin-top: 1em;
+  }
+}
+
+.search.segment, .catererMenu.segment {
+  min-height: 230px;
+  p {
+    margin-bottom: 0;
+  }
+  .header-state {
+    margin-top: 1.5em;
+
+    h1.ui.header {
+      font-size: 2.5em;
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-top: 0;
+    }
+  }
+}
+
+/* <input-star></input-star> directive */
+.angular-input-stars {
+	display: inline-block;
+	padding: 0;
+	padding-left: -5px;
+	list-style: none;
+}
+
+.angular-input-stars > li {
+	font-size: 17px;
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+	cursor: pointer;
+}
+
+.angular-input-stars > li .active {
+		text-shadow: black 0 0 1px, 0 0 1px ;
+}
+
+.angular-input-stars > li .active.angular-input-stars-hover {
+	text-shadow: black 0 0 3px;
+}
+
+.angular-google-map-container { height: 400px; }
+
+.flex {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.order-list {
+    width: 100% !important;
+}
+
+.mobile-app.header {
+  padding-left: 0 !important;
+  min-height: 66px !important;
+
+  h1 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .site-name {
+    padding: .3em 1em !important;
+    font-size: 1.4em;
+    font-weight: bold !important;
+    span {
+      font-weight: normal;
+    }
+  }
+}
+
+.ui.mobile-app.segment {
+  background: url("../images/bg.jpg") 0px 0px repeat scroll transparent;
+  position: absolute;
+  top: 65px !important;
+  left: 0;
+  right: 0;
+  bottom: 0 !important;
+  overflow: hidden;
+  margin-bottom: 0 !important;
+  height: auto !important;
+
+  .ui.grid {
+    margin: 0;
+  }
+  .form.go-online {
+    .button.submit {
+      margin-bottom: 16px;
+    }
+    .button.inverted {
+      color: #727477 !important;
+      box-shadow: 0 0 0 2px #727477 inset!important;
+    }
+  }
+
+  .map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0 !important;
+
+    &.transitMode {
+      padding-bottom: 54px;
+      padding-top: 54px;
+    }
+
+    ng-map {
+      width: 100%;
+      height: 100%;
+      padding: 0 !important;
+    }
+    .top-header {
+      position: absolute;
+      height: 54px;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .bottom-header {
+      position: absolute;
+      height: 54px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.single-form {
+  height: 100%;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  border-bottom: 2px solid rgba(34,36,38,.15);
+
+  .form-container {
+    width: 400px !important;
+
+    label {
+        text-align: left !important;
+    }
+  }
+}
+
+.ui.tiny.modal {
+  width: 400px;
+  margin: 0em 0em 0em -200px;
+
+  .header {
+    text-align: center !important;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .form.inline-form .button {
+      top: 0;
+  }
+
+  .edit-search-form {
+    margin-bottom: 1em;
+  }
+
+  .ui.button.edit-search-button {
+    display: inline-block;;
+  }
+
+  .button.responsive {
+    font-size: 1.28571429rem !important;
+    width: 100%;
+  }
+
+  .ui.container.responsive {
+    width: 100% !important;
+  }
+
+  .ui.list {
+    margin: 0 !important;
+  }
+  .hidden-small {
+    display: none !important;
+  }
+  .show-small {
+    display: block !important;
+  }
+  .food-list-container {
+    padding-top: 20px !important;
+    padding-bottom: 150px !important;
+  }
+
+  .your-order {
+    position: fixed !important;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0px -1px 10px rgba(34,36,38,.15) !important;
+
+    .bill-items {
+      display: none !important;
+    }
+
+  }
+
+  .your-order.open {
+    top: 0;
+    .bill-items {
+      display: block !important;
+      height: calc(100% - 114px);
+    }
+  }
+
+  .your-order .ui.list.bill-items .item .content .quatity {
+    display: block;
+  }
+
+  .toggle-basket-button-container {
+    display: block;
+  }
+}
+
+.animate-enter,
+.animate-leave
+{
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+    transition: 300ms cubic-bezier(0.250, 0.100, 0.250, 1.000) all;
+}
+
+.animate-enter {
+    top: 100%;
+}
+.animate-enter.animate-enter-active {
+    top: 0;
+}
+
+.animate-leave {
+    top: 0;
+}
+.animate-leave.animate-leave-active{
+    top: -100%;
+}
+
+.ui.vertical.segment.footer {
+      margin-top: 50px;
+}
+
+/**
+ *  Do not remove the comment below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

@@ -1,0 +1,44 @@
+<h1 class="ui dividing header">Thank you for ordering</h1>
+<p>We will send a confirmation email to samir.benzenine@wanadoo.fr once the caterer accepts your order</p>
+<div class="ui ordered steps">
+    <div class="step" ng-class="{active : order.status == 'order-pending', completed : order.status != 'order-pending'}">
+      <div class="content" ng-if="order.status != 'order-pending'">
+        <div class="title">Accepted</div>
+        <div class="description">Your order has been accepted</div>
+      </div>
+      <div class="content" ng-if="order.status == 'order-pending'">
+        <div class="title">Accepted</div>
+        <div class="description">Waiting for caterer response</div>
+      </div>
+    </div>
+    <div class="step" ng-class="{active : order.status == 'order-accepted', completed : order.status != 'order-pending' && order.status != 'order-accepted'}">
+      <div class="content" ng-if="order.status != 'order-pending' && order.status != 'order-accepted'">
+        <div class="title">Ready to pick-up</div>
+        <div class="description">You can now pick-up your order</div>
+      </div>
+      <div class="content" ng-if="order.status == 'order-accepted' || order.status == 'order-pending'">
+        <div class="title">Not yet ready</div>
+        <div class="description">Your order is not yet ready</div>
+      </div>
+    </div>
+    <div class="step" ng-class="{active : order.status == 'order-ready', completed : order.status == 'order-completed'}">
+      <div class="content" ng-if="order.status == 'order-completed'">
+        <div class="title">Completed</div>
+        <div class="description">Your order has been delivered</div>
+      </div>
+      <div class="content" ng-if="order.status == 'order-accepted' || order.status == 'order-pending' || order.status == 'order-ready'">
+        <div class="title">Not completed</div>
+        <div class="description">Your order has not been completed</div>
+      </div>
+    </div>
+  </div>
+<ng-map center="current-location" zoom="15" tilt="45"
+    disable-default-u-i="true">
+      <marker
+      position="current"
+      centered="true"
+      icon="{
+        url:'/images/position.png'
+      }">
+      </marker>
+</ng-map>

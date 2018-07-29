@@ -1,0 +1,66 @@
+<div class="ui segments">
+  <div class="ui segment">
+    <h1 class="header" ng-switch="order.status">
+      <span ng-switch-when="order-pending">
+        Pending...
+      </span>
+      <span ng-switch-when="order-accepted">
+        <i class="fa fa-check-circle"></i> Accepted
+      </span>
+      <span ng-switch-when="order-ready">
+        <i class="fa fa-check-circle"></i> Ready
+      </span>
+      <span ng-switch-when="order-completed">
+        <i class="fa fa-check-circle"></i> Completed
+      </span>
+    </h1>
+    <div class="ui active progress" ng-model="order.progress" progress ng-if="order.status == 'order-accepted'">
+      <div class="bar"></div>
+      <div class="label">Remaining time : {{order.minutes}} minutes, {{order.seconds}} seconds</div>
+    </div>
+    <div>
+      <div class="ui large teal buttons estimatedTime" ng-if="order.status == 'order-pending'">
+        <a class="ui button" ng-click="order.preparationTime = (initialPreparationTime - 5)" ng-class="{'active': order.preparationTime == (initialPreparationTime - 5)}">{{initialPreparationTime - 5}} MIN</a>
+        <a class="ui button" ng-click="order.preparationTime = initialPreparationTime" ng-class="{'active': order.preparationTime == initialPreparationTime}">{{initialPreparationTime}} MIN</a>
+        <a class="ui button" ng-click="order.preparationTime = (initialPreparationTime + 5)" ng-class="{'active': order.preparationTime == (initialPreparationTime + 5)}">{{initialPreparationTime + 5}} MIN</a>
+      </div>
+    </div>
+  </div>
+  <div class="ui horizontal segments">
+    <div class="ui segment">
+      <p><i class="fa fa-user"></i>&nbsp;{{order.user.firstName}} {{order.user.lastName}}</p>
+    </div>
+    <div class="ui segment">
+      <p><i class="fa fa-phone"></i>&nbsp;{{order.phoneNumber}}</p>
+    </div>
+    <div class="ui segment">
+      <p><i class="fa fa-envelope"></i>&nbsp;{{order.user.email}}</p>
+    </div>
+  </div>
+  <div class="ui segment">
+    <div class="ui divided items">
+      <div class="item orderItem" ng-repeat="orderItem in order.items">
+        <div class="content">
+          <div class="header">{{orderItem.quantity}}x {{orderItem.dish.name}}</div>
+          <div class="meta">
+            <span class="price">{{ orderItem.price|currency:"£" }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="item orderItem">
+        <div class="content">
+          <div class="header">Total</div>
+          <div class="meta">
+            <span class="price">{{ order.total|currency:"£" }}</span>
+          </div>
+          <div class="description">
+            <p><i class="fa fa-info-circle"></i>{{order.notes}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="ui fluid large teal submit button" ng-click="acceptOrder(order)" ng-if="order.status == 'order-pending'">Accept</div>
+      <div class="ui fluid large teal submit button" ng-click="readyOrder(order)" ng-if="order.status == 'order-accepted'">Ready order</div>
+      <div class="ui fluid large teal submit button" ng-click="completeOrder(order)" ng-if="order.status == 'order-ready'">Complete order</div>
+    </div>
+  </div>
+</div>

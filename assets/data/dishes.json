@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Baked potato",
+    "uid": "Baked potato"
+  },
+  {
+    "name": "Burger",
+    "uid": "Burger"
+  },
+  {
+    "name": "Casserole",
+    "uid": "Casserole"
+  },
+  {
+    "name": "Chicken salad",
+    "uid": "Chicken salad"
+  },
+  {
+    "name": "Curry",
+    "uid": "Curry"
+  },
+  {
+    "name": "Fish pie",
+    "uid": "Fish pie"
+  },
+  {
+    "name": "Frittata",
+    "uid": "Frittata"
+  },
+  {
+    "name": "Houmous",
+    "uid": "Houmous"
+  },
+  {
+    "name": "Lasagne",
+    "uid": "Lasagne"
+  },
+  {
+    "name": "Meet balls",
+    "uid": "Meet balls"
+  },
+  {
+    "name": "Noodle",
+    "uid": "Noodle"
+  },
+  {
+    "name": "Omelette",
+    "uid": "Omelette"
+  },
+  {
+    "name": "One-pot",
+    "uid": "One-pot"
+  },
+  {
+    "name": "Pasta",
+    "uid": "Pasta"
+  },
+  {
+    "name": "Pasta bake",
+    "uid": "Pasta bake"
+  },
+  {
+    "name": "Pie",
+    "uid": "Pie"
+  },
+  {
+    "name": "Pizza",
+    "uid": "Pizza"
+  },
+  {
+    "name": "Quiche",
+    "uid": "Quiche"
+  },
+  {
+    "name": "Risotto",
+    "uid": "Risotto"
+  },
+  {
+    "name": "Sandwich",
+    "uid": "Sandwich"
+  },
+  {
+    "name": "Smoothie",
+    "uid": "Smoothie"
+  },
+  {
+    "name": "Soup",
+    "uid": "Soup"
+  },
+  {
+    "name": "Stir-Fry",
+    "uid": "Stir-Fry"
+  },
+  {
+    "name": "Tagine",
+    "uid": "Tagine"
+  },
+  {
+    "name": "Tapas",
+    "uid": "Tapas"
+  },
+  {
+    "name": "Tarte",
+    "uid": "Tarte"
+  },
+  {
+    "name": "Wrap",
+    "uid": "Wrap"
+  }
+]

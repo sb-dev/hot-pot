@@ -1,0 +1,45 @@
+<div class="ui middle aligned center aligned grid" ng-show="!online">
+  <div class="ui fourteen wide column">
+    <h2 class="ui teal image header">
+      <div class="content">
+        You are offline.
+      </div>
+    </h2>
+    <form class="ui large form" novalidate>
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui fluid search dish selection dropdown" value="selectedDish" name="elementName" items="availableDishes" combobox></div>
+          <!--<div class="ui fluid search selection dropdown" name="elementName" value="selectedDish" combobox>-->
+            <!--<input type="hidden" name="menu">-->
+            <!--<i class="dropdown icon"></i>-->
+            <!--<div class="default text">Select a dish</div>-->
+            <!--<div class="menu">-->
+              <!--<div class="item" ng-repeat="availableDish in availableDishes" data-value="{{availableDish.uid}}" ng-hide="availableDish.hide">{{availableDish.name}}</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        </div>
+        <div class="ui middle aligned selection list divided">
+          <div class="item" ng-repeat="dish in selectedDishes">
+            <img class="ui medium circular image" src="{{dish.picture}}">
+            <div class="content ui grid">
+              <div class="header three wide column">{{dish.name}}</div>
+              <div class="field five wide column">
+                <label>Preparation time</label>
+                <input type="number" name="name" placeholder="E.G. 5" ng-model="dish.preparationTime" ng-maxlength="50" required>
+              </div>
+              <div class="field five wide column">
+                <label>Available portions</label>
+                <input type="number" name="name" placeholder="E.G. 5" ng-model="dish.numberOfPortions" ng-maxlength="50" required>
+              </div>
+              <div class="field two wide column">
+                <button class="ui button" ng-click="removeSelectedDish($index)">X</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui fluid large teal submit button" ng-class="{'loading':form.loading}" ng-click="goOnline(selectedDishes)">GO ONLINE</div>
+      </div>
+      <div class="ui error message"></div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html ng-app="angular">
+  <head>
+    <title>Get fresh home-made food</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/bower_components/dropzone/dist/dropzone.css">
+    <link rel="stylesheet" href="/bower_components/croppie/croppie.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ui-view class="main-view"></div>
+
+    <div login-dialog class="ui tiny basic modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Sign in
+      </div>
+      <div class="content">
+        <div class="ui container center aligned">
+          <a ng-click="loginWithFacebook()" class="ui facebook button">
+            <i class="fa fa-facebook"></i>
+            Facebook Sign in
+          </a>
+          <button class="ui google plus button">
+            <i class="fa fa-google-plus"></i>
+            Google Plus Sign in
+          </button>
+        </div>
+        <div class="ui horizontal inverted divider">
+          Or
+        </div>
+        <form class="ui large form"
+          ng-submit="submitLoginForm(credentials)"
+          name="loginForm"
+          novalidate form-autofill-fix>
+          <div class="ui stacked">
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" name="email" placeholder="E-mail address" ng-model="credentials.email" required>
+                <div class="help-block has-error" ng-if="loginForm.email.$dirty">
+                  <span ng-show="loginForm.email.$error.required">Email is required.</span>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" name="password" placeholder="Password" ng-model="credentials.password" required>
+                <div class="help-block has-error" ng-if="loginForm.password.$dirty">
+                  <span ng-show="loginForm.pasword.$error.required">Password is required.</span>
+                </div>
+              </div>
+            </div>
+            <button type="submit"  class="ui fluid large teal submit button" ng-class="{'loading':loginForm.loading}" ng-disabled="loginForm.$invalid">Login</button>
+          </div>
+          <div class="ui error message"></div>
+        </form>
+        <div class="ui message">
+          Don't have an account? <a ui-sref="register">Sign Up</a>
+        </div
+      </div>
+    </div>
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-kAHa0Gui4zKlX5i4KzL5J-WEowC5LMQ"></script>
+    <!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
+    <!--SCRIPTS-->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/js/dependencies/semantic.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <script src="/bower_components/restangular/dist/restangular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/malarkey/dist/malarkey.min.js"></script>
+    <script src="/bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="/bower_components/angular-input-stars/angular-input-stars.js"></script>
+    <script src="/bower_components/ng-covervid/ngCovervid.js"></script>
+    <script src="/bower_components/dropzone/dist/dropzone.js"></script>
+    <script src="/bower_components/ngSticky/dist/sticky.min.js"></script>
+    <script src="/bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="/bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="/bower_components/momentjs/min/moment.min.js"></script>
+    <script src="/bower_components/momentjs/min/locales.min.js"></script>
+    <script src="/bower_components/humanize-duration/humanize-duration.js"></script>
+    <script src="/bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="/bower_components/angular-svg-round-progressbar/build/roundProgress.js"></script>
+    <script src="/bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="/bower_components/matchmedia/matchMedia.js"></script>
+    <script src="/bower_components/matchmedia-ng/matchmedia-ng.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="/bower_components/braintree-web/dist/braintree.js"></script>
+    <script src="/bower_components/croppie/croppie.js"></script>
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/config/index.module.js"></script>
+    <script src="/js/config/index.run.js"></script>
+    <script src="/js/config/index.route.js"></script>
+    <script src="/js/config/index.restangular.js"></script>
+    <script src="/js/config/index.constants.js"></script>
+    <script src="/js/config/index.config.js"></script>
+    <script src="/js/config/index.auth.js"></script>
+    <script src="/angular_components/checkbox/checkbox.directive.js"></script>
+    <script src="/angular_components/combobox/combobox.directive.js"></script>
+    <script src="/angular_components/combobox/paymentMethodCombobox.directive.js"></script>
+    <script src="/angular_components/croppie/croppie.directive.js"></script>
+    <script src="/angular_components/dropdown/dropdown.directive.js"></script>
+    <script src="/angular_components/form/form.directive.js"></script>
+    <script src="/angular_components/formAutofillFix.js"></script>
+    <script src="/angular_components/image/image.directive.js"></script>
+    <script src="/angular_components/login/login.directive.js"></script>
+    <script src="/angular_components/ngRepeat/ngRepeat.directive.js"></script>
+    <script src="/angular_components/progress/progress.directive.js"></script>
+    <script src="/app/caterer/app/main.controller.js"></script>
+    <script src="/app/caterer/app/order.controller.js"></script>
+    <script src="/app/caterer/app/orders.controller.js"></script>
+    <script src="/app/caterer/caterer.controller.js"></script>
+    <script src="/app/caterer/dashboard/dashboard.controller.js"></script>
+    <script src="/app/caterer/dish/dish.controller.js"></script>
+    <script src="/app/caterer/profile/profile.controller.js"></script>
+    <script src="/app/caterer/signup/catererSignup.controller.js"></script>
+    <script src="/app/checkout/checkout.controller.js"></script>
+    <script src="/app/checkout/confirmation/checkout.confirmation.controller.js"></script>
+    <script src="/app/checkout/details/checkout.details.controller.js"></script>
+    <script src="/app/checkout/login/checkout.login.controller.js"></script>
+    <script src="/app/common/resources/OrderItem.model.js"></script>
+    <script src="/app/common/resources/caterer.model.js"></script>
+    <script src="/app/common/resources/catererProfile.model.js"></script>
+    <script src="/app/common/resources/location.model.js"></script>
+    <script src="/app/common/resources/meal.model.js"></script>
+    <script src="/app/common/resources/order.model.js"></script>
+    <script src="/app/common/resources/paymentMethod.model.js"></script>
+    <script src="/app/common/resources/search.model.js"></script>
+    <script src="/app/common/resources/user.model.js"></script>
+    <script src="/app/common/services/auth.resolver.js"></script>
+    <script src="/app/common/services/auth.service.js"></script>
+    <script src="/app/common/services/caterer.service.js"></script>
+    <script src="/app/common/services/food.service.js"></script>
+    <script src="/app/common/services/order.service.js"></script>
+    <script src="/app/common/services/postcode.service.js"></script>
+    <script src="/app/common/services/session.js"></script>
+    <script src="/app/common/services/user.service.js"></script>
+    <script src="/app/driver/driver.controller.js"></script>
+    <script src="/app/home/home.controller.js"></script>
+    <script src="/app/main/auth.controller.js"></script>
+    <script src="/app/main/main.controller.js"></script>
+    <script src="/app/menu/menu.controller.js"></script>
+    <script src="/app/search/search.controller.js"></script>
+    <script src="/app/user/user.controller.js"></script>
+    <script src="/js/config/index.localStorage.js"></script>
+    <!--SCRIPTS END-->
+    <script>
+      io.sails.transports=['websocket']
+      var token = "JWT " + JSON.parse(localStorage.getItem('hotPot.token'));
+      io.sails.headers={
+        "Authorization": token
+      }
+    </script>
+  </body>
+</html>

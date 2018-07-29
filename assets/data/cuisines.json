@@ -1,0 +1,82 @@
+[
+  {
+    "name": "African",
+    "uid": "African"
+  },
+  {
+    "name": "American",
+    "uid": "American"
+  },
+  {
+    "name": "British",
+    "uid": "British"
+  },
+  {
+    "name": "Caribbean",
+    "uid": "Caribbean"
+  },
+  {
+    "name": "Chinese",
+    "uid": "Chinese"
+  },
+  {
+    "name": "East European",
+    "uid": "East European"
+  },
+  {
+    "name": "French",
+    "uid": "French"
+  },
+  {
+    "name": "Greek",
+    "uid": "Greek"
+  },
+  {
+    "name": "Indian",
+    "uid": "Indian"
+  },
+  {
+    "name": "Irish",
+    "uid": "Irish"
+  },
+  {
+    "name": "Italian",
+    "uid": "Italian"
+  },
+  {
+    "name": "Japonese",
+    "uid": "Japonese"
+  },
+  {
+    "name": "Mexican",
+    "uid": "Mexican"
+  },
+  {
+    "name": "Nordic",
+    "uid": "Nordic"
+  },
+  {
+    "name": "North African",
+    "uid": "North African"
+  },
+  {
+    "name": "Portuguese",
+    "uid": "Portuguese"
+  },
+  {
+    "name": "South American",
+    "uid": "South American"
+  },
+  {
+    "name": "Spanish",
+    "uid": "Spanish"
+  },
+  {
+    "name": "Thai and South-East Asian",
+    "uid": "Thai and South-East Asian"
+  },
+  {
+    "name": "Turkish and Middle Eastern",
+    "uid": "Turkish and Middle Eastern"
+  }
+]

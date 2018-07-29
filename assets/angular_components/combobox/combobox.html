@@ -1,0 +1,6 @@
+<input type="hidden">
+<i class="dropdown icon"></i>
+<div class="default text">Select a cuisine</div>
+<div class="menu">
+  <div ng-repeat="item in items" class="item" data-value="{{item.uid}}" ng-hide="item.hide" ng-repeat-done>{{item.name}}</div>
+</div>

@@ -1,0 +1,85 @@
+<div class="ui grid caterer">
+  <div class="dashboard-sidebar no-side-padding" ng-class="{'small-side-bar':smallSideBar}">
+    <div class="ui large secondary pointing menu head">
+      <h1 class="item header site-name head clickable" ng-click="smallSideBar = !smallSideBar"><i class="fa fa-bars"></i><span class="lobster">&nbsp;Hot Pot&nbsp;</span><span class="subtitle">caterer space</span></h1>
+    </div>
+    <div class="inner-sidebar">
+      <div class="ui secondary vertical pointing menu">
+        <!-- <a ui-sref="caterer.dashboard" ui-sref-active="active" class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="dashboard"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"></path></g></svg>
+          </i>
+          <span>Dashboard</span>
+        </a>
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="question_answer"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"></path></g></svg>
+          </i>
+          <span>Messages</span>
+        </a>
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="contacts"><path d="M20 0H4v2h16V0zM4 24h16v-2H4v2zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z"></path></g></svg>
+          </i>
+          <span>Calendar</span>
+        </a>
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="assessment"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path></g></svg>
+          </i>
+          <span>Stats</span>
+        </a>
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="settings"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"></path></g></svg>
+          </i>
+          <span>Preferences</span>
+        </a> -->
+        <a ui-sref="caterer.profile" ui-sref-active="active" class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="contacts"><path d="M20 0H4v2h16V0zM4 24h16v-2H4v2zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z"></path></g></svg>
+          </i>
+          <span class="side-menu-label">Caterer profile</span>
+        </a>
+      </div>
+
+      <h4 class="ui horizontal divider header">
+        Dishes
+      </h4>
+
+      <div class="ui vertical text menu" style="padding-left: 16px;">
+        <a class="item" ui-sref="caterer.addDish" ui-sref-active="active">
+          <i class="plus icon"></i>&nbsp;<span class="side-menu-label">Add New Dish</span>
+        </a>
+        <!-- <div class="item" ng-repeat="dish in caterer.dishes"> -->
+        <a class="item" ng-repeat="dish in currentCaterer.dishes" ui-sref="caterer.editDish({dishId: dish.uid})" ui-sref-active="active">
+          <img class="ui avatar image" ng-src="{{dish.picture}}" on-error="{{dish.picture}}">
+          <span class="side-menu-label">{{dish.name}}</span>
+        </a>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-content no-side-padding" ng-class="{'extended':smallSideBar}">
+    <div class="ui large secondary pointing menu">
+      <div class="right item">
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="question_answer"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"></path></g></svg>
+          </i>
+        </a>
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="notifications"><path d="M11.5 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6.5-6v-5.5c0-3.07-2.13-5.64-5-6.32V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5v.68c-2.87.68-5 3.25-5 6.32V16l-2 2v1h17v-1l-2-2z"></path></g></svg>
+          </i>
+        </a>
+        <a class="item icon-link">
+          <i class="fa svg24">
+            <svg xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" style="pointer-events: none; display: block;"><g id="account_circle"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path></g></svg>
+          </i>
+        </a>
+      </div>
+    </div>
+    <div class="ui content-container" ui-view></div>
+  </div>
+</div>

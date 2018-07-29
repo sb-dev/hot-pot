@@ -1,0 +1,102 @@
+<div class="ui middle aligned center aligned grid" ng-show="!online">
+  <div class="ui fourteen wide column">
+    <h2 class="ui teal image header">
+      <div class="content">
+        You are offline.
+      </div>
+    </h2>
+    <form class="ui large form go-online">
+      <div class="ui stacked segment">
+        <div class="ui fluid large teal submit button" ng-click="goOnline()">Go Online</div>
+        <div class="field">
+          <h1 class="header"><i class="fa fa-bicycle"></i>&nbsp;Bike</h1>
+        </div>
+        <div class="ui large inverted button">Select a different vehicule</div>
+      </div>
+
+      <div class="ui error message"></div>
+    </form>
+  </div>
+</div>
+
+<div class="ui fluid grid map-container transitMode" ng-if="online && transitMode">
+  <div class="ui top attached menu mobile-app top-header">
+    <a class="item">
+      <i class="fa fa-paper-plane"></i>&nbsp;Navigate
+    </a>
+    <div class="right item">
+      <a class="ui button">Samir's kitchen</a>
+    </div>
+  </div>
+  <div class="ui fluid two item menu grid bottom-header">
+    <a class="item four wide column"><i class="fa fa-times"></i>&nbsp;Cancel delivery</a>
+    <a class="item eight wide column">
+      <div class="ui fluid large teal submit button cancel-button" ng-click="cancelDelivery()">
+        <i class="fa fa-angle-double-right"></i>Confirm pick up
+      </div>
+    </a>
+    <a class="item four wide column"><i class="fa fa-phone"></i>&nbsp;Contact caterer</a>
+  </div>
+  <ng-map center="51.428751, -0.133341" zoom="20" tilt="45"
+      disable-default-u-i="true">
+        <marker
+        position="51.428751, -0.133341"
+        centered="true"
+        icon="{
+          url:'/images/position.png'
+        }">
+        </marker>
+        <directions
+          draggable="true"
+          panel="directions-panel"
+          travel-mode="BICYCLING"
+          origin="51.428751, -0.133341"
+          destination="51.427692, -0.131241">
+        </directions>
+  </ng-map>
+</div>
+
+<div class="ui fluid grid map-container" ng-if="online && !transitMode && !incomingRequest">
+  <ng-map center="51.428751, -0.133341" zoom="15" tilt="45"
+      disable-default-u-i="true">
+        <marker
+        position="51.428751, -0.133341"
+        centered="true"
+        icon="{
+          url:'/images/position.png'
+        }">
+        </marker>
+  </ng-map>
+</div>
+
+<div class="ui fluid grid map-container transitMode" ng-if="online && !transitMode && incomingRequest">
+  <div class="ui top attached menu mobile-app top-header">
+    <div class="left item">
+      <timer countdown="remainingTime" interval="1000">{{minutes}} minutes, {{seconds}} seconds.</timer>
+    </div>
+  </div>
+  <div class="ui fluid two item menu grid bottom-header">
+    <a class="item twelve wide column">
+      <div class="ui fluid large teal submit button cancel-button" ng-click="acceptRequest()">
+        <i class="fa fa-angle-double-right"></i>Swipe to Accpet delivery</div>
+      </a>
+  </div>
+  <ng-map center="51.428751, -0.133341" zoom="15" tilt="45"
+      disable-default-u-i="true">
+        <marker
+        position="51.428751, -0.133341"
+        centered="true"
+        icon="{
+          url:'/images/position.png'
+        }">
+        </marker>
+        <directions
+          draggable="true"
+          panel="directions-panel"
+          travel-mode="BICYCLING"
+          waypoints="{{wayPoints}}"
+          origin="51.428751, -0.133341"
+          destination="51.430093, -0.129932">
+        </directions>
+  </ng-map>
+</div>

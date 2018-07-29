@@ -1,0 +1,21 @@
+<input type="hidden">
+<i class="dropdown icon"></i>
+<div class="default text">Select a payment method</div>
+<div class="menu">
+  <!-- <div class="item" data-value="paymentMethod.uid" ng-switch-when="matchValue1">
+    <i class="fa fa-paypal"></i>&nbsp;Paypal
+    <br />
+    <span class="note">samir.benzenine@wanadoo.fr</span>
+  </div> -->
+  <div class="item" ng-repeat="paymentMethod in items" data-value="{{paymentMethod.uid}}" ng-switch="paymentMethod.cardType" ng-repeat-done>
+    <div class="card-type">
+      <i ng-switch-when="American Express" class="american express icon"></i>
+      <i ng-switch-when="Discover" class="discover icon"></i>
+      <i ng-switch-when="Mastercard" class="mastercard icon"></i>
+      <i ng-switch-when="Visa" class="visa icon"></i>
+      <i ng-switch-default class="fa fa-credit-card"></i>
+      {{paymentMethod.cardType}}
+    </div>
+    <span class="note">{{paymentMethod.expirationMonth}}/{{paymentMethod.expirationYear}} - {{paymentMethod.maskedNumber}}</span>
+  </div>
+</div>

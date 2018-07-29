@@ -1,0 +1,134 @@
+<div class="ui inverted vertical center aligned segment" ng-class="headerState">
+  <!-- <video covervid class="leadvid-video" autoplay loop
+     poster="img/video-fallback.png">
+     <source src="videos/clouds.webm" type="video/webm">
+     <source src="/videos/lead-video.mp4" type="video/mp4">
+ </video> -->
+  <div class="ui container top-menu">
+    <div class="ui large inverted menu">
+      <a ui-sref="main.home" class="item header site-name lobster"><img src="/images/logo2.png" />Hot Pot</a>
+      <div class="right item">
+        <a class="item" ui-sref="main.menu" ng-if="total > 0">
+          <i class="fa fa-shopping-basket" style="font-size: 1.5em;"></i>&nbsp;{{ total|currency:"£" }}
+        </a>
+        <a class="ui inverted button" ui-sref="catererSignup" ng-if="headerState == 'home'">Become a caterer</a>
+        <a class="ui inverted button" ng-click="signIn()" ng-if="!currentUser && headerState != 'home'">Sign in</a>
+
+        <a class="item">Help</a>
+        <div dropdown class="ui simple dropdown item user" ng-if="currentUser">
+          <div ng-switch="currentUser.profilePicture">
+              <i ng-switch-when="false" class="fa fa-user"></i>&nbsp;
+              <img ng-switch-default class="ui avatar image" ng-src="{{currentUser.profilePicture}}">
+          </div>
+          {{ currentUser.displayName }}<i class="dropdown icon"></i>
+          <div class="menu">
+            <a class="item">Order history</a>
+            <a class="item">Account</a>
+            <a ng-click="signOut()" class="item">Logout</a>
+          </div>
+        </div>
+        <a class="item" ng-click="signIn()" ng-if="!currentUser && headerState == 'home'">Sign in</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-state" ng-switch="headerState">
+    <div class="ui text container" ng-switch-when="home">
+      <h1 class="ui inverted header lobster">Welcome to Hot Pot</h1>
+      <h2>Get fresh home-made food</h2>
+      <form class="ui form search-form" ng-submit="searchFood(search)" name="form.searchFood" novalidate>
+        <div class="field">
+          <div class="ui action input">
+            <input type="text" placeholder="Post code..." name="postcode" ng-model="search.postcode" required>
+            <button class="ui button">Find food</button>
+          </div>
+          <div class="ui pointing red basic label error" ng-show="((form.searchFood.postcode.$dirty || form.searchFood.$submitted) && form.searchFood.postcode.$error.required) || form.searchFood.postcode.$error.invalidFormat">
+            <span>Please enter a valid Postcode</span>
+          </div>
+        </div>
+        <div class="ui buttons">
+          <a class="ui inverted button" ng-click="search.service = 'all'" ng-class="{'selected': search.service == 'all'}">All</a>
+          <a class="ui inverted button" ng-click="search.service = 'delivery'" ng-class="{'selected': search.service == 'delivery'}">Delivery</a>
+          <a class="ui inverted button" ng-click="search.service = 'collection'" ng-class="{'selected': search.service == 'collection'}">Collection</a>
+        </div>
+      </form>
+    </div>
+    <div class="ui text container head" ng-switch-when="search">
+      <div class="menu-cover" ng-if="header.cover"></div>
+      <p>{{header.text}}</p>
+      <h1 class="ui inverted header">{{header.title}}</h1>
+      <a class="ui inverted button edit-search-button" ng-if="toggleEditSearchFormButton" ng-click="toggleEditSearchForm()">Edit search</a>
+    </div>
+    <div class="ui text container head" ng-switch-when="catererMenu">
+      <div class="menu-cover"></div>
+      <p>{{header.text}}</p>
+      <h1 class="ui inverted header">{{header.title}}</h1>
+    </div>
+  </div>
+  <div class="ui container left aligned" ng-if="headerState == 'catererMenu'">
+    <a ui-sref="main.search(header.back.params)" class="left item back-link"><i class="fa fa-angle-left fa-3"></i> Back to results {{header.params.postcode}}</a>
+  </div>
+</div>
+
+<div class="secondary-view" ui-view></div>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Company</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">About Us</a>
+            <a href="#" class="item">Blog</a>
+            <a href="#" class="item">News</a>
+            <a href="#" class="item">Contact Us</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Learn more</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Support</a>
+            <a href="#" class="item">Become a caterer</a>
+            <a href="#" class="item">Caterer FAQ</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Join Us On</h4>
+          <p>
+            <button class="ui circular facebook icon button">
+              <i class="facebook icon"></i>
+            </button>
+            <button class="ui circular twitter icon button">
+              <i class="twitter icon"></i>
+            </button>
+            <button class="ui circular google plus icon button">
+              <i class="google plus icon"></i>
+            </button>
+            <button class="ui circular instagram icon button">
+              <i class="instagram icon"></i>
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ui container">
+      <div class="ui inverted right">
+        <div class="ui inverted secondary menu">
+          <div class="item notice">
+            © 2016 Hot Pot Technologies Ltd
+          </div>
+          <div class="right item">
+            <a class="item">
+              Privacy policy
+            </a>
+            <a class="item">
+              Terms of service
+            </a>
+            <a class="item">
+              Site map
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
